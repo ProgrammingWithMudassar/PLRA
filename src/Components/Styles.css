@@ -1,0 +1,6 @@
+.dropdown {
+    height: 0;
+    overflow: hidden;
+    background-color: red;
+    transition: 1.3s ease-out;
+}

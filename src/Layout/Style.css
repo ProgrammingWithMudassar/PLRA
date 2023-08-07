@@ -1,0 +1,47 @@
+.open_sidebar {
+    padding: 0.2rem 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.close_sidebar {
+    padding: 0.2rem 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar {
+    width: 100%;
+    padding-left: 1rem;
+    margin-top: 1.5rem;
+}
+
+.sidebar__div {
+    width: 100%;
+}
+
+.sidebar__li {
+    width: 90%;
+    padding: 0.5rem;
+    text-align: center;
+}
+.sidebar__li:hover {
+    width: 90%;
+    background-color: #affbc2;
+    border-radius: 5px;
+}
+
+.dropdownList {
+    margin-top: 5px;
+    list-style: none;
+}
+
+.dropdownList li {
+    color: black;
+    padding: 3px;
+}
+.Avatar_Dropdown_icon{
+    color: 
+}
