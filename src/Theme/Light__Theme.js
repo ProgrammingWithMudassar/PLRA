@@ -91,7 +91,7 @@ const Theme = createTheme({
         },
         h5: {
             fontWeight: '400',
-            fontSize: "2.5rem",
+            fontSize: "1.5rem",
             lineHeight: 1.334,
             letterSpacing: "0em"
         },
