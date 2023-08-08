@@ -29,19 +29,21 @@
 }
 .sidebar__li:hover {
     width: 90%;
-    background-color: #affbc2;
+    background-color: rgba(240, 240, 240,0.5);
     border-radius: 5px;
 }
 
 .dropdownList {
     margin-top: 5px;
     list-style: none;
+    padding-left: 2.7rem;
 }
 
 .dropdownList li {
     color: black;
     padding: 3px;
 }
-.Avatar_Dropdown_icon{
-    color: 
+.dropdownList li:hover {
+    color: rgb(196, 97, 97);
+    padding: 3px;
 }

@@ -120,10 +120,10 @@ const Sidebar = () => {
               display: 'flex', justifyContent: 'space-between',
               alignItems: 'center', gap: 3
             }}>
-              <FontAwesomeIcon  icon={Sidebar_header.messageIcon}   style={{ fontSize: "20px", cursor: 'pointer' }}  />
+              <FontAwesomeIcon icon={Sidebar_header.messageIcon} style={{ fontSize: "20px", cursor: 'pointer' }} />
               <FontAwesomeIcon icon={Sidebar_header.settingIcon} style={{ fontSize: "20px", cursor: 'pointer' }} />
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                <Avatar alt="" src={Sidebar_header.avatar} sx={{ cursor: 'pointer',borderRadius:"10px" }} />
+                <Avatar alt="" src={Sidebar_header.avatar} sx={{ cursor: 'pointer', borderRadius: "10px" }} />
                 <FontAwesomeIcon icon={Sidebar_header.avatarDown} style={{ fontSize: "20px", cursor: 'pointer' }} />
               </Box>
             </Box>
@@ -163,7 +163,12 @@ const Sidebar = () => {
                           {data.dropdownItems.map((dropdownItem) => (
                             <Link to={`/${dropdownItem.route}`} key={dropdownItem.key}>
                               <li onClick={nestedBar}>
-                                <Typography variant="body2" color="initial">{dropdownItem.text}</Typography>
+                                <Typography variant="body2" color="initial" align='left'
+                                  sx={{
+                                    '&:hover': {
+                                      color: theme.palette.primary.dark
+                                    },
+                                  }}>{dropdownItem.text}</Typography>
                               </li>
                             </Link>
                           ))}
@@ -174,7 +179,11 @@ const Sidebar = () => {
                     <Link to={`/${data.route}`} style={{ width: '100%' }}>
                       <Box className={open ? "open_sidebar sidebar__li" : "close_sidebar sidebar__li"} >
                         <FontAwesomeIcon icon={data.icon} style={{ color: "#3bd862", width: "25px" }} />
-                        {open && <span style={{ marginLeft: "0.7rem" }}><Typography variant="body2" sx={{ color: theme.palette.common.black }}>{data.text}</Typography></span>}
+                        {
+                          open && <span style={{ marginLeft: "0.7rem" }}>
+                            <Typography variant="body2" sx={{ color: theme.palette.common.black }}>{data.text}</Typography>
+                          </span>
+                        }
                       </Box>
                     </Link>
                   )}
