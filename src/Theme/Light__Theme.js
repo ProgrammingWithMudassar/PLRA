@@ -10,9 +10,9 @@ const Theme = createTheme({
             white: "#fff",
         },
         primary: {
-            main: "#34C759",      // Blue
-            light: "#49EE73",     // Light Blue
-            dark: "#0EA033",      // Dark Blue
+            main: "#34C759",      // green
+            light: "#49EE73",     // Light green
+            dark: "#0EA033",      // Dark green
             contrastText: "#fff", // White
         },
         secondary: {
@@ -91,7 +91,7 @@ const Theme = createTheme({
         },
         h5: {
             fontWeight: '400',
-            fontSize: "1.5rem",
+            fontSize: "1.2rem",
             lineHeight: 1.334,
             letterSpacing: "0em"
         },
@@ -128,12 +128,35 @@ const Theme = createTheme({
     },
 
     components: {
+        // Inputs 
+        MuiTextField: {
+            styleOverrides: {
+                root: {
+                    "& .MuiInputBase-input": {
+                        padding: "0.35rem",
+                        border: "1ox solid #ced4da",
+                        fontSize: "0.85rem",
+                    },
+                    "& .MuiOutlinedInput-root": {
+                        borderRadius: "0.3rem",
+                        "&:hover fieldset": {
+                            border: "1ox solid #7EEE9B"
+                        },
+                        "&.Mui-focused fieldset": {
+                            border: "1ox solid #7EEE9B"
+                        },
+                    },
+                    width: '100%',
+                    height: "33px"
+                },
+            },
+        },
+
+        // Buttons
         MuiButton: {
             styleOverrides: {
                 root: {
-                    backgroundColor: "rgb(52,199,89)",
-                    color: "#fff",
-                    padding: "0.2rem",
+                    padding: "0.2rem 2rem",
                     border: "none",
                     borderRadius: 4,
                     fontSize: 16,
@@ -141,14 +164,63 @@ const Theme = createTheme({
                     textTransform: 'none',
                     transition: "background-color 0.3s",
                     boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.2)",
+                },
+                contained: {
+                    backgroundColor: "rgb(52,199,89)",
+                    color: "#fff",
+                    borderRadius: 4,
                     "&:hover": {
                         backgroundColor: "rgba(41,184,77,1)",
                         boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+                        borderRadius: 4,
+                    },
+                },
+                outlined: {
+                    backgroundColor: "transparent",
+                    color: "rgb(52,199,89)",
+                    border: "2px solid rgb(52,199,89)",
+                    borderRadius: 6,
+
+                    "&:hover": {
+                        backgroundColor: "rgba(41,184,77,0.1)",
+                        border: "2px solid rgb(52,199,89)",
+                        borderRadius: 6,
                     },
                 },
             },
         },
-    },
+
+        // InputLabel
+        MuiInputLabel: {
+            styleOverrides: {
+                root: {
+                    color: "#495057",
+                    fontSize: "0.85rem",
+                },
+            },
+        },
+
+        // Select 
+        MuiSelect: {
+            styleOverrides: {
+                root: {
+                    padding: "0.3rem", width: "100%",
+                    border: "1ox solid #ced4da",
+                    fontSize: "0.85rem",
+                    height: "29.5px",
+                },
+            },
+        },
+
+        MuiMenuItem: {
+            styleOverrides: {
+                root: {
+                    fontSize: '0.75rem',
+                    width: '100%'
+                },
+            },
+        },
+    }
 });
 
 export default Theme;

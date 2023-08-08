@@ -2,12 +2,12 @@ import React from "react";
 import "../../Styles.css";
 import { Typography, Box, Container } from "@mui/material";
 
-const Personal__Information = () => {
+const Address = () => {
   return (
     <>
       <Box className="sectionTitle">
         <Typography variant="h5" color="initial">
-          Personal Information
+          Address
         </Typography>
       </Box>
       <Container maxWidth="lg"></Container>
@@ -15,4 +15,4 @@ const Personal__Information = () => {
   );
 };
 
-export default Personal__Information;
+export default Address;
