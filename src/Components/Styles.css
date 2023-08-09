@@ -4,3 +4,24 @@
     background-color: red;
     transition: 1.3s ease-out;
 }
+
+/* styles.css */
+.dropdown-menu {
+    overflow: visible;
+    filter: drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.32));
+    margin-top: 1.5rem;
+}
+
+.dropdown-menu:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 14px;
+    width: 10px;
+    height: 10px;
+    background-color: #F0F0F0;
+    /* You can adjust the background color */
+    transform: translateY(-50%) rotate(45deg);
+    z-index: 0;
+}

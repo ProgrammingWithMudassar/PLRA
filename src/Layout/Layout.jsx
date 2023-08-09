@@ -149,7 +149,7 @@ const Sidebar = () => {
                         <FontAwesomeIcon icon={data.icon} style={{ color: "#3bd862", width: '25px' }} />
                         {open && <>
                           <span style={{ marginLeft: "0.7rem" }}>
-                            <Typography variant="body2" className='sidebar_data'>{data.text}</Typography>
+                            <Typography variant="body2" >{data.text}</Typography>
                           </span>
                           {activeDropdown === index ? (
                             <FontAwesomeIcon icon={faAngleUp} style={{ marginLeft: "auto", color: "#D0D0D0" }} />
@@ -163,7 +163,7 @@ const Sidebar = () => {
                           {data.dropdownItems.map((dropdownItem) => (
                             <Link to={`/${dropdownItem.route}`} key={dropdownItem.key}>
                               <li onClick={nestedBar}>
-                                <Typography variant="body2" color="initial" align='left'
+                                <Typography variant="body2"  align='left'
                                   sx={{
                                     '&:hover': {
                                       color: theme.palette.primary.dark

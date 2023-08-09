@@ -177,7 +177,7 @@ const Basic__Information = () => {
 
           </form>
           <Grid item xs={12} sx={{ textAlign: 'center', mt: 4 }}>
-            <Button variant='contained'>Submit</Button>
+            <Button variant='contained'>Add Information</Button>
           </Grid>
         </CardContent>
       </Box>

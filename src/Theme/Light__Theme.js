@@ -122,7 +122,8 @@ const Theme = createTheme({
             fontWeight: '400',
             fontSize: "0.875rem",
             lineHeight: 1.43,
-            letterSpacing: "0.01071em"
+            letterSpacing: "0.01071em",
+            // color:"gray"
         },
     },
     components: {
@@ -194,7 +195,7 @@ const Theme = createTheme({
                 root: {
                     color: "#495057",
                     fontSize: "0.85rem",
-                    marginTop:"-0.5rem"
+                    marginTop: "-0.5rem"
                 },
             },
         },
@@ -211,6 +212,7 @@ const Theme = createTheme({
             },
         },
 
+        //Menu Item
         MuiMenuItem: {
             styleOverrides: {
                 root: {
@@ -219,6 +221,47 @@ const Theme = createTheme({
                 },
             },
         },
+
+        //Table
+        MuiDataGrid: {
+            styleOverrides: {
+                root: {
+                    border: '1px solid rgb(52, 199, 89)',
+                    borderRadius: '4px',
+                    "& .MuiDataGrid-columnHeaders": {
+                        backgroundColor: "rgb(52,199,89)",
+                        color: "#FFFFFF",
+                        fontSize: 14, 
+                    },
+                    '& .MuiIconButton-root': {
+                        Color: "#000",
+                    },
+                    '& .MuiDataGrid-columnMenuContainer': {
+                        width: '0px', // Adjust the desired width
+                    },
+                },
+                columnSeparator: {
+                    height:"200px"
+                },
+                virtualScroller: {
+                    '&::-webkit-scrollbar': {
+                        width: '0.5rem',
+                    },
+                    '&::-webkit-scrollbar-track': {
+                        background: '#f1f1f1',
+                    },
+                    '&::-webkit-scrollbar-thumb': {
+                        backgroundColor: 'rgb(52, 199, 89)',
+                        borderRadius: '4px',
+                    },
+                },
+                columnMenu: {
+                    backgroundColor: '#fff', // Change the background color here
+                },
+            },
+        },
+
+
     }
 });
 
