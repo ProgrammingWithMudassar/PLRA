@@ -62,7 +62,6 @@ const Theme = createTheme({
             A700: "#616161",      // Very Dark Grey
         },
     },
-
     typography: {
         fontFamily: font,
         h1: {
@@ -126,7 +125,6 @@ const Theme = createTheme({
             letterSpacing: "0.01071em"
         },
     },
-
     components: {
         // Inputs 
         MuiTextField: {
@@ -196,6 +194,7 @@ const Theme = createTheme({
                 root: {
                     color: "#495057",
                     fontSize: "0.85rem",
+                    marginTop:"-0.5rem"
                 },
             },
         },

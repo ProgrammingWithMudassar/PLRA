@@ -5,6 +5,7 @@ import {
   Grid, TextField, InputLabel, Box, Button,
 } from "@mui/material";
 import Breadcrumb from '../../../Components/Common/BreadCrumb.jsx';
+import { MyTableContainer } from '../../../Components/index.js';
 import '../../Styles.css'
 
 
@@ -56,9 +57,8 @@ const Basic__Information = () => {
       <Box component={Card} sx={{ mt: 3 }}>
         <CardContent>
           <form>
-
             <Grid container spacing={2}>
-              <Grid item md={4}>
+              <Grid item xs={12} md={4} >
                 <InputLabel htmlFor="validationCustom01">CNIC<span style={{ color: "red" }}>*</span></InputLabel>
                 <TextField variant="outlined" fullWidth />
               </Grid>
@@ -87,6 +87,10 @@ const Basic__Information = () => {
                 <TextField id="phoneNumber" variant="outlined" fullWidth />
               </Grid>
               <Grid item md={4}>
+                <InputLabel htmlFor="J_date">Joining Date<span style={{ color: "red" }}>*</span></InputLabel>
+                <TextField type='date' id="J_date" variant="outlined" fullWidth />
+              </Grid>
+              <Grid item md={4}>
                 <InputLabel htmlFor="groups">Groups<span style={{ color: "red" }}>*</span></InputLabel>
                 <Select fullWidth id="groups">
                   {groupsOptions.map((option, index) => (
@@ -103,7 +107,16 @@ const Basic__Information = () => {
                 </Select>
               </Grid>
               <Grid item md={4}>
-                <InputLabel htmlFor="currentPosition">Current Position<span style={{ color: "red" }}>*</span></InputLabel>
+                <InputLabel htmlFor="center">Center<span style={{ color: "red" }}>*</span></InputLabel>
+                <Select fullWidth id="center">
+                  <MenuItem value=""><em>Select an option</em></MenuItem>
+                  <MenuItem value="Option 1">Option 1</MenuItem>
+                  <MenuItem value="Option 2">Option 2</MenuItem>
+                  {/* Add more options here */}
+                </Select>
+              </Grid>
+              <Grid item md={4}>
+                <InputLabel htmlFor="currentPosition">Position<span style={{ color: "red" }}>*</span></InputLabel>
                 <Select fullWidth id="currentPosition">
                   <MenuItem value=""><em>Select an option</em></MenuItem>
                   <MenuItem value="Option 1">Option 1</MenuItem>
@@ -111,26 +124,7 @@ const Basic__Information = () => {
                   {/* Add more options here */}
                 </Select>
               </Grid>
-              <Grid item md={4}>
-                <InputLabel htmlFor="reporting">Reporting<span style={{ color: "red" }}>*</span></InputLabel>
-                <Select fullWidth id="reporting">
-                  <MenuItem value=""><em>Select an option</em></MenuItem>
-                  <MenuItem value="Option 1">Option 1</MenuItem>
-                  <MenuItem value="Option 2">Option 2</MenuItem>
-                  {/* Add more options here */}
-                </Select>
-              </Grid>
-              <Grid item md={4}>
-                <InputLabel htmlFor="currentAssigningOfficer">Current Assigning Officer<span style={{ color: "red" }}>*</span></InputLabel>
-                <Select fullWidth id="currentAssigningOfficer">
-                  <MenuItem value=""><em>Select an option</em></MenuItem>
-                  <MenuItem value="Option 1">Option 1</MenuItem>
-                  <MenuItem value="Option 2">Option 2</MenuItem>
-                  {/* Add more options here */}
-                </Select>
-              </Grid>
-
-
+              {/* Images  */}
               <Grid item md={4}>
                 <InputLabel htmlFor="profileImage">Profile Image<span style={{ color: "red" }}>*</span></InputLabel>
                 <TextField
@@ -182,11 +176,18 @@ const Basic__Information = () => {
             </Grid>
 
           </form>
-
           <Grid item xs={12} sx={{ textAlign: 'center', mt: 4 }}>
             <Button variant='contained'>Submit</Button>
           </Grid>
         </CardContent>
+      </Box>
+
+      <Box mt={2}>
+        <Card>
+          <CardContent>
+            <MyTableContainer />
+          </CardContent>
+        </Card>
       </Box>
 
 

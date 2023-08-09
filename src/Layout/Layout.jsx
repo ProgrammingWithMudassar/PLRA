@@ -193,7 +193,7 @@ const Sidebar = () => {
           </Box>
         </Box>
       </Drawer>
-      <Box className="App" sx={{ flexGrow: 1, p: 3 }}>
+      <Box className="App" sx={{ height:"auto", flexGrow: 1, p: 3 }}>
         <DrawerHeader />
         <Handling__Route />
       </Box>
