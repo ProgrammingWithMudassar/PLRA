@@ -1,28 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-* {
-  padding: 0px;
-  margin: 0px;
-  box-sizing: border-box;
-  border: none;
-  outline: none;
-  text-decoration: none;
-}
+  @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap');
 
-:root{
-  --white-color:#fff;
-}
+  * {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    font-family: 'Nunito', sans-serif;
+  }
 
-.App {
-  background-color: rgba(240, 240, 240,0.3);
-  font-size: 100%;
-  scroll-behavior: smooth;
-  height: auto;
-}
-.input{
-  font-size: 1rem;
-  padding: 6px;
-  border: 0.1rem solid rgb(117, 201, 89);
-  border-radius: 7px;
-  width: 100%;
-}
+  :root {
+    --white-color: #fff;
+    --light-gray: #C2C2C2;
+    /* green  */
+    --green-main: #34C759;
+    --green-light: #49EE73;
+    --green-dark: #0EA033;
+    /* gray  */
+    --gray-main: #49A451;
+    --gray-light: #7AC28B;
+    --gray-dark: #237421;
+  }
 
+  .App {
+    background-color: rgba(240, 240, 240, 0.3);
+    font-size: 100%;
+    scroll-behavior: smooth;
+    height: auto;
+  }
+
+  .input {
+    font-size: 1rem;
+    padding: 6px;
+    border: 0.1rem solid rgb(117, 201, 89);
+    border-radius: 7px;
+    width: 100%;
+  }

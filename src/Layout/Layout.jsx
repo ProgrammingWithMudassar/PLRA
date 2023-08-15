@@ -99,7 +99,7 @@ const Sidebar = () => {
 
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: 'flex',width:'100%' }}>
       <AppBar position="fixed" sx={{ backgroundColor: theme.palette.common.white, boxShadow: "0px 1px 8px rgba(0, 0, 0, 0.1)" }}>
         <Toolbar sx={{ display: 'flex' }}>
           {/* <Typography variant="h6" sx={{ width: '18%', color: theme.palette.common.black }}>PLRA</Typography> */}
@@ -134,10 +134,10 @@ const Sidebar = () => {
         <DrawerHeader />
         <Divider />
         <Box className="sidebar custom-scrollbar">
-          <Box mt={0}>
+          <Box mt={0} onClick={() => setOpen(true)}>
             <ul className='sidebar__list'>
               {SlideBarData.map((data, index) => (
-                <li key={data.key} style={{ cursor: 'pointer', with: "100%", }} className={open ? "open_sidebar" : "close_sidebar"}>
+                <li key={data.key} style={{ cursor: 'pointer', with: "100%", }} className={open ? "open_sidebar" : "close_sidebar"} onClick={() => setOpen(true)}>
                   {data.dropdownItems ? (
                     <div onClick={() => handleDropdownClick(index)} className='sidebar__li'>
                       <Box sx={{
@@ -149,7 +149,7 @@ const Sidebar = () => {
                         <FontAwesomeIcon icon={data.icon} style={{ color: "#3bd862", width: '25px' }} />
                         {open && <>
                           <span style={{ marginLeft: "0.7rem" }}>
-                            <Typography variant="body2" >{data.text}</Typography>
+                            <Typography variant="body1" >{data.text}</Typography>
                           </span>
                           {activeDropdown === index ? (
                             <FontAwesomeIcon icon={faAngleUp} style={{ marginLeft: "auto", color: "#D0D0D0" }} />
@@ -163,11 +163,9 @@ const Sidebar = () => {
                           {data.dropdownItems.map((dropdownItem) => (
                             <Link to={`/${dropdownItem.route}`} key={dropdownItem.key}>
                               <li onClick={nestedBar}>
-                                <Typography variant="body2"  align='left'
+                                <Typography variant="body2" align='left'
                                   sx={{
-                                    '&:hover': {
-                                      color: theme.palette.primary.dark
-                                    },
+                                    '&:hover': { color: theme.palette.primary.dark },
                                   }}>{dropdownItem.text}</Typography>
                               </li>
                             </Link>
@@ -176,7 +174,7 @@ const Sidebar = () => {
                       )}
                     </div>
                   ) : (
-                    <Link to={`/${data.route}`} style={{ width: '100%' }}>
+                    <Link to={`/${data.route}`} >
                       <Box className={open ? "open_sidebar sidebar__li" : "close_sidebar sidebar__li"} >
                         <FontAwesomeIcon icon={data.icon} style={{ color: "#3bd862", width: "25px" }} />
                         {
@@ -193,7 +191,7 @@ const Sidebar = () => {
           </Box>
         </Box>
       </Drawer>
-      <Box className="App" sx={{ height:"auto", flexGrow: 1, p: 3 }}>
+      <Box sx={{ minHeight: "100vh", flexGrow: 1, p: 3, maxWidth:"auto"}} onClick={() => { setOpen(false); setActiveDropdown(false); }}>
         <DrawerHeader />
         <Handling__Route />
       </Box>

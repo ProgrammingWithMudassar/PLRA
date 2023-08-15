@@ -53,7 +53,16 @@
     justify-content: center;
     border-radius: 5px;
 }
-.Upload_Image{
+
+.Upload_Image {
     width: 95%;
     object-fit: contain;
+}
+
+.file_box_css {
+    height: 150px;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: var(--light-gray)
 }

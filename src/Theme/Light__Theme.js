@@ -1,6 +1,6 @@
 import { createTheme } from '@mui/material';
 
-const font = 'Roboto, sans-serif';
+const font = 'Nunito, sans-serif';
 
 const Theme = createTheme({
     palette: {
@@ -114,16 +114,16 @@ const Theme = createTheme({
         },
         body1: {
             fontWeight: '400',
-            fontSize: "1rem",
+            fontSize: "16px",
             lineHeight: 1.5,
             letterSpacing: "0.00938em"
         },
         body2: {
             fontWeight: '400',
-            fontSize: "0.875rem",
+            fontSize: "14px",
             lineHeight: 1.43,
             letterSpacing: "0.01071em",
-            // color:"gray"
+            color: "#212121"
         },
     },
     components: {
@@ -162,7 +162,7 @@ const Theme = createTheme({
                     cursor: "pointer",
                     textTransform: 'none',
                     transition: "background-color 0.3s",
-                    boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.2)",
+                    boxShadow: "0px 0px 9px 5px rgba(231, 231, 231, 0.5)"
                 },
                 contained: {
                     backgroundColor: "rgb(52,199,89)",
@@ -170,8 +170,8 @@ const Theme = createTheme({
                     borderRadius: 4,
                     "&:hover": {
                         backgroundColor: "rgba(41,184,77,1)",
-                        boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
                         borderRadius: 4,
+                        boxShadow: "0px 0px 9px 5px rgba(231, 231, 231, 0.5)"
                     },
                 },
                 outlined: {
@@ -194,7 +194,7 @@ const Theme = createTheme({
             styleOverrides: {
                 root: {
                     color: "#495057",
-                    fontSize: "0.85rem",
+                    fontSize: "0.95rem",
                     marginTop: "-0.5rem"
                 },
             },
@@ -231,8 +231,9 @@ const Theme = createTheme({
                     "& .MuiDataGrid-columnHeaders": {
                         backgroundColor: "rgb(52,199,89)",
                         color: "#FFFFFF",
-                        fontSize: 14, 
+                        fontSize: 16,
                     },
+
                     '& .MuiIconButton-root': {
                         Color: "#000",
                     },
@@ -241,11 +242,12 @@ const Theme = createTheme({
                     },
                 },
                 columnSeparator: {
-                    height:"200px"
+                    height: "200px"
                 },
                 virtualScroller: {
                     '&::-webkit-scrollbar': {
                         width: '0.5rem',
+                        height: '0.5rem'
                     },
                     '&::-webkit-scrollbar-track': {
                         background: '#f1f1f1',
@@ -261,7 +263,13 @@ const Theme = createTheme({
             },
         },
 
-
+        MuiCard: {
+            styleOverrides: {
+                root: {
+                    boxShadow: "0px 0px 19px 9px rgba(231, 231, 231, 0.7)"
+                },
+            },
+        },
     }
 });
 

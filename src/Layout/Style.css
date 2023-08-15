@@ -37,8 +37,9 @@
 .dropdownList {
     margin-top: 5px;
     list-style: none;
-    padding-left: 2.7rem;
-}
+    border-left: 2px solid var(--green-light);
+    margin-left: 2.4rem;
+  }
 
 .dropdownList li {
     color: black;
@@ -58,17 +59,18 @@
 ::-webkit-scrollbar-track {
     box-shadow: inset 0 0 2px grey;
     border-radius: 3px;
+    display: none;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(45deg, #a5ffa1 30%, #9dff94 90%);
+    background: linear-gradient(45deg, #bababa 30%, #bababa  90%);
     border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(45deg, #92ffaa 30%, #8dfd8d 90%);
+    background: linear-gradient(45deg, #bababa 30%, #bababa  90%);
     border-radius: 10px;
     cursor: pointer;
 }
