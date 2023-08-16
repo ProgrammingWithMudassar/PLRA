@@ -84,7 +84,7 @@ const Theme = createTheme({
         },
         h4: {
             fontWeight: '400',
-            fontSize: "2.125rem",
+            fontSize: "1.5rem",
             lineHeight: 1.235,
             letterSpacing: "0.00735em"
         },
@@ -92,7 +92,7 @@ const Theme = createTheme({
             fontWeight: '400',
             fontSize: "1.2rem",
             lineHeight: 1.334,
-            letterSpacing: "0em"
+            letterSpacing: "0em",
         },
         h6: {
             fontWeight: '500',
@@ -155,7 +155,7 @@ const Theme = createTheme({
         MuiButton: {
             styleOverrides: {
                 root: {
-                    padding: "0.2rem 2rem",
+                    padding: "0.17rem 2rem",
                     border: "none",
                     borderRadius: 4,
                     fontSize: 16,
@@ -177,12 +177,12 @@ const Theme = createTheme({
                 outlined: {
                     backgroundColor: "transparent",
                     color: "rgb(52,199,89)",
-                    border: "2px solid rgb(52,199,89)",
+                    border: "1px solid rgb(52,199,89)",
                     borderRadius: 6,
 
                     "&:hover": {
                         backgroundColor: "rgba(41,184,77,0.1)",
-                        border: "2px solid rgb(52,199,89)",
+                        border: "1px solid rgb(52,199,89)",
                         borderRadius: 6,
                     },
                 },
@@ -263,6 +263,7 @@ const Theme = createTheme({
             },
         },
 
+        //Card
         MuiCard: {
             styleOverrides: {
                 root: {
@@ -270,6 +271,18 @@ const Theme = createTheme({
                 },
             },
         },
+
+        //Dialog
+        MuiDialog: {
+            styleOverrides: {
+                paper: {
+                    width: '90%', // Set the desired width here
+                    maxWidth: 'none',
+                    borderRadius: "10px"
+                },
+            },
+        },
+
     }
 });
 

@@ -1,25 +1,16 @@
 import React, { useState } from 'react'
-import "../../Styles.css"
+import "../../../Styles.css"
 import {
-  Card, CardContent, MenuItem, Menu,TextField,
-  Typography, Box, Button, Grid,InputLabel,Select 
+  Card, CardContent, MenuItem, Menu, TextField,
+  Typography, Box, Button, Grid, InputLabel, Select
 } from "@mui/material";
-import Breadcrumb from '../../../Components/Common/BreadCrumb.jsx';
-import { MyTableContainer } from '../../../Components/index.js';
-import '../../Styles.css'
-import { rows } from '../../../Data/Dummy_Data/Dummy__Data.js'
-import ListItemIcon from '@mui/material/ListItemIcon';
-import EditIcon from '@mui/icons-material/Edit';
-import DeleteIcon from '@mui/icons-material/Delete';
-import VisibilityIcon from '@mui/icons-material/Visibility';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogTitle from '@mui/material/DialogTitle';
+import Breadcrumb from '../../../../Components/Common/BreadCrumb.jsx';
+import { rows } from '../../../../Data/Dummy_Data/Dummy__Data.js'
 import { useTheme } from '@mui/material/styles';
+import { useParams } from 'react-router-dom';
 
-const Personal__Information = () => {
+
+const AddEmployee = () => {
   const [uploadedFrontImage, setUploadedFrontImage] = useState(null);
   const [uploadedBackImage, setUploadedBackImage] = useState(null);
   const [uploadedProfileImage, setUploadedProfileImage] = useState(null);
@@ -61,7 +52,7 @@ const Personal__Information = () => {
 
   return (
     <>
-
+      <Breadcrumb title="Add Employee" breadcrumbItem="Employee / Basic Information / Add Employee" />
       <Box component={Card} sx={{ mt: 3, pt: 2 }}>
         <CardContent>
           <form>
@@ -189,4 +180,4 @@ const Personal__Information = () => {
   );
 };
 
-export default Personal__Information;
+export default AddEmployee;

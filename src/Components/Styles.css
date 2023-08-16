@@ -25,3 +25,13 @@
     transform: translateY(-50%) rotate(45deg);
     z-index: 0;
 }
+.tabbar{
+    display: flex;
+    margin-bottom: 2px;
+}
+.tabbar li{
+    list-style: none;
+    cursor: pointer;
+    padding: 0.2rem 1rem;
+    border-left: 1px solid #e7e7e7;
+}

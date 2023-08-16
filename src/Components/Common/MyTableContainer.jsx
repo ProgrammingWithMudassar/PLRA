@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCirclePlus } from '@fortawesome/free-solid-svg-icons';
 import { useTheme } from '@mui/material/styles';
 import '../Styles.css'
+import { Link } from 'react-router-dom';
 
 
 
@@ -15,16 +16,19 @@ export default function MyTableContainer(props) {
   const handleAddNewClick = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
-  const { columns, data, customPageSize, tableHeading, isAddNewButton } = props
+  const { columns, data, customPageSize, tableHeading, isAddNewButton, route } = props
   return (
-    <div style={{ width:"100%"}}>
+    <div style={{ width: "100%" }}>
       <Box sx={{ mb: 2, display: 'flex', justifyContent: 'space-between' }}>
         <Typography variant="h4" component="h4" sx={{ fontSize: '1.125rem', margin: 0, fontWeight: "blod" }}>{tableHeading}</Typography>
         {
           isAddNewButton ?
-            <Button variant='contained' sx={{ display: 'flex', alignItems: 'center' }}><span>
-              <FontAwesomeIcon icon={faCirclePlus} style={{ fontSize: "0.9rem", marginRight: "6px", paddingTop: "5px" }} /></span>Add New
-            </Button> :
+            <Link to={`${route}`}>
+              <Button variant='contained' sx={{ display: 'flex', alignItems: 'center' }}><span>
+                <FontAwesomeIcon icon={faCirclePlus} style={{ fontSize: "0.9rem", marginRight: "6px", paddingTop: "5px" }} /></span>Add New
+              </Button>
+            </Link>
+            :
             <></>
         }
       </Box>

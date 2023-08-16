@@ -6,12 +6,12 @@ import MuiAppBar from '@mui/material/AppBar';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import { Link } from 'react-router-dom';
-import { SlideBarData } from '../Data/Side_Bar_Data/Side__Bar__Data.js';
-import { Sidebar_header } from '../Data/Side_Bar_Data/Side__Bar__Data.js';
+import { SlideBarData,Sidebar_header } from '../Data/Side_Bar_Data/Side__Bar__Data.js';
 import Handling__Route from '../Routes/Handle_Route/Handling__Route.jsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faBars, faAngleUp, faAngleDown } from '../Assets/Icons/Icons.js';
 import DropDown from '../Components/Common/DropDown.jsx';
+import { TabBar } from '../Components/index.js';
 import "./Style.css"
 
 
@@ -99,18 +99,18 @@ const Sidebar = () => {
 
 
   return (
-    <Box sx={{ display: 'flex',width:'100%' }}>
+    <Box sx={{ display: 'flex', width: '100%' }}>
       <AppBar position="fixed" sx={{ backgroundColor: theme.palette.common.white, boxShadow: "0px 1px 8px rgba(0, 0, 0, 0.1)" }}>
         <Toolbar sx={{ display: 'flex' }}>
           {/* <Typography variant="h6" sx={{ width: '18%', color: theme.palette.common.black }}>PLRA</Typography> */}
           <IconButton onClick={SideabarController}>
             <FontAwesomeIcon icon={faBars} />
           </IconButton>
-          <Box sx={{ ml: 1, p: 1, display: 'flex', width: '30%', justifyContent: "center", alignItems: 'center' }}>
+          <Box sx={{ ml: 1, p: 1, display: 'flex', width: '35%', justifyContent: "center", alignItems: 'center' }}>
             <img src={Sidebar_header.Logo_Image} alt="" style={{ width: '60px' }} />
             <Box sx={{ display: 'flex', flexDirection: 'column', ml: 1.5 }}>
-              <Typography variant="body1" fontWeight={600} color="initial">Registration of Deeds - ROD</Typography>
-              <Typography variant="body2" color="initial">Board of Revenue, Punjab</Typography>
+              <Typography variant="body1" fontWeight={600} color="initial" >Goverment of punjab - PLRA</Typography>
+              <Typography variant="body2" color="initial">Punjab Land Records Authority</Typography>
             </Box>
           </Box>
           <Box sx={{ width: "100%", display: "flex", justifyContent: "space-between", pr: 2 }}>
@@ -138,61 +138,25 @@ const Sidebar = () => {
             <ul className='sidebar__list'>
               {SlideBarData.map((data, index) => (
                 <li key={data.key} style={{ cursor: 'pointer', with: "100%", }} className={open ? "open_sidebar" : "close_sidebar"} onClick={() => setOpen(true)}>
-                  {data.dropdownItems ? (
-                    <div onClick={() => handleDropdownClick(index)} className='sidebar__li'>
-                      <Box sx={{
-                        display: 'flex',
-                        justifyContent: 'space-between',
-                        alignItems: 'center',
-                        width: '100%',
-                      }}>
-                        <FontAwesomeIcon icon={data.icon} style={{ color: "#3bd862", width: '25px' }} />
-                        {open && <>
-                          <span style={{ marginLeft: "0.7rem" }}>
-                            <Typography variant="body1" >{data.text}</Typography>
-                          </span>
-                          {activeDropdown === index ? (
-                            <FontAwesomeIcon icon={faAngleUp} style={{ marginLeft: "auto", color: "#D0D0D0" }} />
-                          ) : (
-                            <FontAwesomeIcon icon={faAngleDown} style={{ marginLeft: "auto", color: "#D0D0D0" }} />
-                          )}
-                        </>}
-                      </Box>
-                      {activeDropdown === index && (
-                        <ul className='dropdownList'>
-                          {data.dropdownItems.map((dropdownItem) => (
-                            <Link to={`/${dropdownItem.route}`} key={dropdownItem.key}>
-                              <li onClick={nestedBar}>
-                                <Typography variant="body2" align='left'
-                                  sx={{
-                                    '&:hover': { color: theme.palette.primary.dark },
-                                  }}>{dropdownItem.text}</Typography>
-                              </li>
-                            </Link>
-                          ))}
-                        </ul>
-                      )}
-                    </div>
-                  ) : (
-                    <Link to={`/${data.route}`} >
-                      <Box className={open ? "open_sidebar sidebar__li" : "close_sidebar sidebar__li"} >
-                        <FontAwesomeIcon icon={data.icon} style={{ color: "#3bd862", width: "25px" }} />
-                        {
-                          open && <span style={{ marginLeft: "0.7rem" }}>
-                            <Typography variant="body2" sx={{ color: theme.palette.common.black }}>{data.text}</Typography>
-                          </span>
-                        }
-                      </Box>
-                    </Link>
-                  )}
+                  <Link to={`/${data.route}`} >
+                    <Box className={open ? "sidebar_contant sidebar__li" : "close_sidebar sidebar__li"} >
+                      <FontAwesomeIcon icon={data.icon} style={{ color: "#3bd862", width: "25px" }} />
+                      {
+                        open && <span style={{ marginLeft: "0.7rem" }}>
+                          <Typography variant="body2" sx={{ color: theme.palette.common.black,width:"100%" }}>{data.text}</Typography>
+                        </span>
+                      }
+                    </Box>
+                  </Link>
                 </li>
               ))}
             </ul>
           </Box>
         </Box>
       </Drawer>
-      <Box sx={{ minHeight: "100vh", flexGrow: 1, p: 3, maxWidth:"auto"}} onClick={() => { setOpen(false); setActiveDropdown(false); }}>
+      <Box sx={{ minHeight: "100vh", flexGrow: 1, p: 3, maxWidth: "100%",overflowX:'hidden' }} onClick={() => { setOpen(false); setActiveDropdown(false); }}>
         <DrawerHeader />
+        <TabBar />
         <Handling__Route />
       </Box>
     </Box>

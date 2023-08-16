@@ -3,7 +3,12 @@
     display: inline-block;
     margin-bottom: 20px;
 }
-
+.InOneLine{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
 .sectionTitle::before {
     content: '';
     height: 3px;
@@ -44,6 +49,10 @@
     width: 30%;
     font-size: 14px;
 }
+label {
+    font-size: 15px;
+    font-weight: 600;
+}
 
 .Image_Upload_Box {
     padding: 2px;
@@ -64,5 +73,15 @@
     display: flex;
     align-items: center;
     font-size: 12px;
-    color: var(--light-gray)
+    color: var(--light-gray);
+}
+.Basic_Profile_Img{
+    width: 12rem;
+    height: 12rem;
+    background-color: var(--light-gray);
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 2px #dcdcdc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

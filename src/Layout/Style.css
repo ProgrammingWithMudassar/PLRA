@@ -4,6 +4,20 @@
     display: flex;
     align-items: center;
 }
+.open_sidebar:hover{
+    width: 95%;
+    background-color: rgba(240, 240, 240, 0.5);
+    border-radius: 5px;
+}
+.sidebar_contant{
+    padding: 0.2rem 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.sidebar__list{
+    width:"100%"
+}
 
 .close_sidebar {
     padding: 0.2rem 0;
@@ -29,9 +43,7 @@
 }
 
 .sidebar__li:hover {
-    width: 95%;
-    background-color: rgba(240, 240, 240, 0.5);
-    border-radius: 5px;
+ 
 }
 
 .dropdownList {
