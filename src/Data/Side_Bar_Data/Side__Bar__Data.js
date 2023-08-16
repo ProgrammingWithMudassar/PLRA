@@ -107,71 +107,84 @@ import {
 //   },
 // ];
 
+export const Employee_DropDown= [
+  { key: 1, route: "employee/basic_information", text: "Basic Information " },
+  { key: 2, route: "employee/personal_information", text: "Personal Information" },
+  { key: 3, route: "employee/employment_history", text: "Employment History" },
+  { key: 4, route: "employee/contact_information", text: "Contact Information" },
+  { key: 5, route: "employee/personal_document", text: "Personal Document" },
+  { key: 6, route: "employee/family_information", text: "Family Information" },
+  { key: 7, route: "employee/references", text: "References" },
+  { key: 8, route: "employee/education", text: "Education" },
+  { key: 9, route: "employee/address", text: "Address" },
+  { key: 10, route: "employee/training", text: "Training" },
+  { key: 11, route: "employee/skills", text: "Skills" },
+]
 
 export const SlideBarData = [
-    {
-      key: 1,
-      route: '',
-      text: 'Dashboard',
-      icon: faHome,
-    },
-    {
-      key: 2,
-      text: "Employee",
-      icon: faUser,
-      route: "employee/basic_information",
-    },
-    {
-      key: 3,
-      text: 'Leaves',
-      icon: faClipboard,
-    },
-    {
-      key: 4,
-      text: 'LeavePlanner',
-      icon: faClock,
-      route: 'LeavePlanner', 
-    },
-    {
-      key: 5,
-      text: 'Attendance',
-      icon: faFileAlt,
-    },
-    {
-      key: 6,
-      text: 'Branches',
-      icon: faUser,
-    },
-    {
-      key: 7,
-      text: 'Tasks',
-      icon: faCalendar,
-    },
-    {
-      key: 8,
-      route: 'notices',
-      text: 'Notices',
-      icon: faBriefcase,
-    },
-    {
-      key: 9,
-      route: '',
-      text: 'Notes Pool',
-      icon: faBook,
-    },
-    {
-      key: 10,
-      route: '',
-      text: 'Performance',
-      icon: faCheckSquare,
-    },
-    {
-      key: 11,
-      route: '',
-      text: 'Setting',
-      icon: faCog,
-    },
-  ];
+  {
+    key: 1,
+    route: '',
+    text: 'Dashboard',
+    icon: faHome,
+  },
+  {
+    key: 2,
+    text: "Employee",
+    icon: faUser,
+    route: "employee/basic_information",
+  },
+  {
+    key: 3,
+    text: 'Leaves',
+    icon: faClipboard,
+  },
+  {
+    key: 4,
+    text: 'LeavePlanner',
+    icon: faClock,
+    route: 'LeavePlanner',
+  },
+  {
+    key: 5,
+    text: 'Attendance',
+    icon: faFileAlt,
+  },
+  {
+    key: 6,
+    text: 'Branches',
+    icon: faUser,
+  },
+  {
+    key: 7,
+    text: 'Tasks',
+    icon: faCalendar,
+  },
+  {
+    key: 8,
+    route: 'notices',
+    text: 'Notices',
+    icon: faBriefcase,
+  },
+  {
+    key: 9,
+    route: '',
+    text: 'Notes Pool',
+    icon: faBook,
+  },
+  {
+    key: 10,
+    route: '',
+    text: 'Performance',
+    icon: faCheckSquare,
+  },
+  {
+    key: 11,
+    route: '',
+    text: 'Setting',
+    icon: faCog,
+  },
+];
 
 
 export const Sidebar_header = {

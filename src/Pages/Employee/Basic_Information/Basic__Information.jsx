@@ -19,6 +19,8 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import { useTheme } from '@mui/material/styles';
 import { Link, useNavigate } from 'react-router-dom'
+import Drawar_Tabbar from '../Drawar_Tabbar';
+import avartar from '../../../Assets/png/avatar.jpg'
 
 const renderNullInRed = (params) => {
   const value = params.value;
@@ -123,21 +125,19 @@ const Basic__Information = () => {
 
   return (
     <>
-      <Breadcrumb title="Employee" breadcrumbItem="Basic Information" />
-      <Box mt={2} sx={{ overflow: 'scroll' }}>
-        <Card sx={{ width: '100%', overflowX: 'scroll' }}>
-          <CardContent >
-            <MyTableContainer
-              columns={columns}
-              data={rows}
-              tableHeading="Employee Basic Information"
-              isAddNewButton={true}
-              customPageSize={10}
-              route={'/employee/basic_information/AddEmployee'}
-            />
-          </CardContent>
-        </Card>
-      </Box>
+      <Breadcrumb title="Basic Information" breadcrumbItem="Employee / Basic Information" />
+      <Card sx={{ width: '100%', overflowX: 'scroll' }}>
+        <CardContent >
+          <MyTableContainer
+            columns={columns}
+            data={rows}
+            tableHeading="Employee Basic Information"
+            isAddNewButton={true}
+            customPageSize={10}
+            route={'/employee/basic_information/AddEmployee'}
+          />
+        </CardContent>
+      </Card>
 
       <Dialog
         open={dialogOpen}
@@ -153,8 +153,12 @@ const Basic__Information = () => {
               </Typography>
             </Grid>
 
+            <Drawar_Tabbar />
             <Grid item sx={{ width: "100%" }} xs={12} md={3}>
-              <Box className="Basic_Profile_Img" sx={{ mb: 4 }}>Image</Box>
+                <Button variant='contained' sx={{ width: "120px", mr: '20px' }} >Edit</Button>
+              <Box className="Basic_Profile_Img" sx={{ mb: 4, objectFit: 'contain', overflow: 'hidden' }}>
+                <img src={avartar} alt="" width={200} />
+              </Box>
               <Box sx={{ mb: 1 }}>
                 <label name="name">Father Name:</label>
                 <Typography variant="body2" color="initial" >{selectedRowData.father_name}</Typography>
@@ -176,7 +180,7 @@ const Basic__Information = () => {
               </Box>
               <Box>
                 <label name="name">CNIC :</label>
-                <Typography variant="body2" color="initial" >{selectedRowData.cnic}</Typography>
+                <Typography variant="body2" color="initial" >{selectedRowData.service_duration}</Typography>
               </Box>
               <Box sx={{ mb: 1 }}>
                 <label name="name">Father Name:</label>
@@ -277,6 +281,18 @@ const Basic__Information = () => {
                 <Button variant='contained' sx={{ width: "120px", mr: '20px' }} >Edit</Button>
               </Link>
               <Button variant='outlined' sx={{ width: "120px" }} onClick={() => setDialogOpen(false)}>Close</Button>
+            </Grid>
+            <Grid item xs={12} sx={{ textAlign: 'left', mt: -12, width: "350px" }}>
+              <Link to={`/employee/basic_information/EditEmployee/${selectedRowData.id}`}>
+                <Button variant='contained' sx={{ width: "120px", mr: '20px' }} >Edit</Button>
+              </Link>
+              <Button variant='outlined' sx={{ width: "120px" }} onClick={() => setDialogOpen(false)}>Close</Button>
+            </Grid>
+            <Grid item xs={12} sx={{ textAlign: 'center', mt: -12, width: "350px" }}>
+              <Link to={`/employee/basic_information/EditEmployee/${selectedRowData.id}`}>
+                <Button  sx={{ width: "160px", mr: '20px' ,color:"#000" }} >Edit</Button>
+              </Link>
+              <Button  sx={{ width: "160px" ,color:"#000"}} onClick={() => setDialogOpen(false)}>Close</Button>
             </Grid>
           </Grid>
         )}

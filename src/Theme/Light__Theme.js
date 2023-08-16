@@ -267,7 +267,8 @@ const Theme = createTheme({
         MuiCard: {
             styleOverrides: {
                 root: {
-                    boxShadow: "0px 0px 19px 9px rgba(231, 231, 231, 0.7)"
+                    boxShadow: "0px 0px 19px 9px rgba(231, 231, 231, 0.7)",
+                    borderRadius:'8px'
                 },
             },
         },
@@ -283,6 +284,30 @@ const Theme = createTheme({
             },
         },
 
+
+        //TabBar Customization
+        MuiTab: {
+            styleOverrides: {
+                root: {
+                    fontSize: "13px",
+                    textTransform: 'none',
+                },
+            },
+        },
+        MuiTabList: {
+            styleOverrides: {
+                root: {
+                    maxHeight:"20px"
+                },
+            },
+        },
+        MuiTabList: {
+            styleOverrides: {
+                root: {
+                    minHeight: '30px', 
+                },
+            },
+        },
     }
 });
 
