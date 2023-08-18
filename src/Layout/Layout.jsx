@@ -6,13 +6,20 @@ import MuiAppBar from '@mui/material/AppBar';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import { Link } from 'react-router-dom';
-import { SlideBarData,Sidebar_header } from '../Data/Side_Bar_Data/Side__Bar__Data.js';
+import { SlideBarData, Sidebar_header } from '../Data/Side_Bar_Data/Side__Bar__Data.js';
 import Handling__Route from '../Routes/Handle_Route/Handling__Route.jsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faBars, faAngleUp, faAngleDown } from '../Assets/Icons/Icons.js';
 import DropDown from '../Components/Common/DropDown.jsx';
 import { TabBar } from '../Components/index.js';
 import "./Style.css"
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import Tooltip from '@mui/material/Tooltip';
+import PersonAdd from '@mui/icons-material/PersonAdd';
+import Settings from '@mui/icons-material/Settings';
+import Logout from '@mui/icons-material/Logout';
 
 
 
@@ -97,6 +104,15 @@ const Sidebar = () => {
     setActiveDropdown(null)
   }
 
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const openMenu = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
 
   return (
     <Box sx={{ display: 'flex', width: '100%' }}>
@@ -122,10 +138,45 @@ const Sidebar = () => {
             }}>
               <FontAwesomeIcon icon={Sidebar_header.messageIcon} style={{ fontSize: "20px", cursor: 'pointer' }} />
               <FontAwesomeIcon icon={Sidebar_header.settingIcon} style={{ fontSize: "20px", cursor: 'pointer' }} />
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+
+
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}
+                onClick={handleClick}
+              >
                 <Avatar alt="" src={Sidebar_header.avatar} sx={{ cursor: 'pointer', borderRadius: "10px" }} />
                 <FontAwesomeIcon icon={Sidebar_header.avatarDown} style={{ fontSize: "20px", cursor: 'pointer' }} />
               </Box>
+              <Menu
+                anchorEl={anchorEl}
+                id="account-menu"
+                open={openMenu}
+                onClose={handleClose}
+                onClick={handleClose}
+                PaperProps={{
+                  elevation: 0,
+                  sx: {
+                    overflow: 'visible', width: "200px",
+                    filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
+                    mt: 1.5,
+                    '& .MuiAvatar-root': {
+                      width: 32,
+                      height: 32,
+                      ml: -0.5,
+                      mr: 1,
+                    },
+                    '&:before': {
+                      content: '""', display: 'block',
+                      position: 'absolute', top: 0, right: 14, width: 10, height: 10, bgcolor: 'background.paper', transform: 'translateY(-50%) rotate(45deg)', zIndex: 0,
+                    },
+                  },
+                }}
+                transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+                anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+              >
+                <MenuItem onClick={handleClose}><Avatar fontSize="20px" width="100px" /><Typography variant="body2" sx={{ color: theme.palette.gray.main }}>My Profile</Typography></MenuItem>
+                <Divider />
+                <MenuItem onClick={handleClose}><Logout fontSize="small" width="100px" /><Typography variant="body2" sx={{ color: theme.palette.gray.main }}>Logout</Typography></MenuItem>
+              </Menu>
             </Box>
           </Box>
         </Toolbar>
@@ -143,7 +194,7 @@ const Sidebar = () => {
                       <FontAwesomeIcon icon={data.icon} style={{ color: "#3bd862", width: "25px" }} />
                       {
                         open && <span style={{ marginLeft: "0.7rem" }}>
-                          <Typography variant="body2" sx={{ color: theme.palette.common.black,width:"100%" }}>{data.text}</Typography>
+                          <Typography variant="body2" sx={{ color: theme.palette.common.black, width: "100%" }}>{data.text}</Typography>
                         </span>
                       }
                     </Box>
@@ -152,9 +203,10 @@ const Sidebar = () => {
               ))}
             </ul>
           </Box>
+
         </Box>
       </Drawer>
-      <Box sx={{ minHeight: "100vh", flexGrow: 1, p: 3, maxWidth: "100%",overflowX:'hidden' }} onClick={() => { setOpen(false); setActiveDropdown(false); }}>
+      <Box sx={{ minHeight: "100vh", flexGrow: 1, p: 3, maxWidth: "100%", overflowX: 'hidden' }} onClick={() => { setOpen(false); setActiveDropdown(false); }}>
         <DrawerHeader />
         <TabBar />
         <Handling__Route />

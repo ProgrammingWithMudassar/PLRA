@@ -13,9 +13,7 @@ import { Link } from 'react-router-dom';
 const rowHeight = 40;
 
 export default function MyTableContainer(props) {
-  const handleAddNewClick = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+
   const { columns, data, customPageSize, tableHeading, isAddNewButton, route } = props
   return (
     <div style={{ width: "100%" }}>
