@@ -155,7 +155,7 @@ const Basic__Information = () => {
 
             <Drawar_Tabbar />
             <Grid item sx={{ width: "100%" }} xs={12} md={3}>
-                <Button variant='contained' sx={{ width: "120px", mr: '20px' }} >Edit</Button>
+              <Button variant='contained' sx={{ width: "120px", mr: '20px' }} >Edit</Button>
               <Box className="Basic_Profile_Img" sx={{ mb: 4, objectFit: 'contain', overflow: 'hidden' }}>
                 <img src={avartar} alt="" width={200} />
               </Box>
@@ -242,6 +242,7 @@ const Basic__Information = () => {
                 <Typography variant="body2" color="initial" >{selectedRowData.father_name}</Typography>
               </Box>
             </Grid>
+
             <Grid item xs={12} md={3} >
               <Box sx={{ mb: 1 }}>
                 <label name="name">Father Name:</label>
@@ -276,23 +277,12 @@ const Basic__Information = () => {
                 <Typography variant="body2" color="initial" >{selectedRowData.father_name}</Typography>
               </Box>
             </Grid>
+            
             <Grid item xs={12} sx={{ textAlign: 'right', mt: -6, width: "350px" }}>
               <Link to={`/employee/basic_information/EditEmployee/${selectedRowData.id}`}>
                 <Button variant='contained' sx={{ width: "120px", mr: '20px' }} >Edit</Button>
               </Link>
               <Button variant='outlined' sx={{ width: "120px" }} onClick={() => setDialogOpen(false)}>Close</Button>
-            </Grid>
-            <Grid item xs={12} sx={{ textAlign: 'left', mt: -12, width: "350px" }}>
-              <Link to={`/employee/basic_information/EditEmployee/${selectedRowData.id}`}>
-                <Button variant='contained' sx={{ width: "120px", mr: '20px' }} >Edit</Button>
-              </Link>
-              <Button variant='outlined' sx={{ width: "120px" }} onClick={() => setDialogOpen(false)}>Close</Button>
-            </Grid>
-            <Grid item xs={12} sx={{ textAlign: 'center', mt: -12, width: "350px" }}>
-              <Link to={`/employee/basic_information/EditEmployee/${selectedRowData.id}`}>
-                <Button  sx={{ width: "160px", mr: '20px' ,color:"#000" }} >Edit</Button>
-              </Link>
-              <Button  sx={{ width: "160px" ,color:"#000"}} onClick={() => setDialogOpen(false)}>Close</Button>
             </Grid>
           </Grid>
         )}
