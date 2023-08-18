@@ -18,7 +18,7 @@ const PrivateRoutes = () => {
     return (
         varify_user() ?
             <Outlet /> : <Navigate to='/login' />
-
+            // Committed by Haseeb
     )
 }
 
