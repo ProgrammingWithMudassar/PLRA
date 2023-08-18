@@ -96,5 +96,7 @@ label {
 }
 
 .table_first_column:hover {
-    color: var();
+    color: var(--green-main);
+    cursor: pointer;
+    text-decoration: underline;
 }

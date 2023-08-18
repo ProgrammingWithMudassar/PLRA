@@ -43,9 +43,15 @@ const Basic__Information = () => {
   const columns = [
     {
       field: "employee_no", headerName: "Employee No", type: "string", width: 200, renderCell: renderNullInRed,
-      renderCell: (params) => (
-        <span className="table_first_column">{params.value}</span>
-      ),
+      renderCell: (params) => {
+        const onView = () => {
+          setSelectedRowData(params.row); 
+          setDialogOpen(true); 
+        };
+        return (
+          <span className="table_first_column" onClick={onView}>{params.value}</span>
+        )
+      }
     },
     { field: "cnic", headerName: "CNIC", type: "string", width: 200, align: 'left', renderCell: renderNullInRed },
     {
@@ -57,68 +63,14 @@ const Basic__Information = () => {
       valueGetter: (params) => params.row.center.center_name || "",
     },
     {
-      field: "job", headerName: "Job", type: "string", width: 150, renderCell: renderNullInRed,
+      field: "job", headerName: "Job", type: "string", width: 170, renderCell: renderNullInRed,
       valueGetter: (params) => params.row.position.job.job_title || "",
     },
     {
-      field: "wingName", headerName: "Wing Name", type: "string", width: 130, renderCell: renderNullInRed,
+      field: "wingName", headerName: "Wing", type: "string", width: 130, renderCell: renderNullInRed,
       valueGetter: (params) => params.row.position.wing.wing_name || "",
     },
-    {
-      field: 'Action', headerName: 'Action', type: 'string', width: 140,
-
-      renderCell: (params) => {
-        const [anchorEl, setAnchorEl] = React.useState(null);
-
-
-        const open = Boolean(anchorEl);
-        const handleClick = (event) => {
-          setAnchorEl(event.currentTarget);
-        };
-        const handleClose = () => setAnchorEl(null);
-        const onEdit = () => {
-          handleClose();
-        }
-        const onDelete = () => handleClose();
-        const onView = () => {
-          setSelectedRowData(params.row); // Set selected row data
-          setDialogOpen(true); // Open the dialog
-          handleClose();
-        };;
-        console.log("hi", selectedRowData);
-
-        return (
-          <div >
-            <Button onClick={handleClick} size="small" variant='contained' aria-controls={open ? 'dropdown-menu' : undefined} aria-haspopup="true" aria-expanded={open ? 'true' : undefined} sx={{ py: 0, px: 2, fontSize: "0.8rem" }}>Action</Button>
-            <Menu
-              anchorEl={anchorEl}
-              id="dropdown-menu"
-              open={open}
-              onClose={handleClose}
-              onClick={handleClose}
-              PaperProps={{
-                elevation: 0,
-                sx: {
-                  overflow: 'visible', mt: 1.5,
-                  filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
-                  '&:before': {
-                    content: '""', display: 'block',
-                    position: 'absolute', top: 0, right: 14, width: 10, zIndex: 0,
-                    height: 10, bgcolor: 'background.paper', transform: 'translateY(-50%) rotate(45deg)',
-                  },
-                },
-              }}
-              transformOrigin={{ horizontal: 'right', vertical: 'top' }}
-              anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
-            >
-              <MenuItem onClick={onView}><ListItemIcon> <VisibilityIcon fontSize="small" sx={{ color: "rgba(255, 179, 46, 0.7)", fontSize: "15px" }} /> </ListItemIcon><Typography variant="body2" color="initial" ml={-1.5}>View</Typography></MenuItem>
-              <MenuItem onClick={onEdit}><ListItemIcon><EditIcon fontSize="small" sx={{ color: "rgba(101, 176, 255, 0.7)", fontSize: "15px" }} /></ListItemIcon><Typography variant="body2" color="initial" ml={-1.5}>Edit</Typography></MenuItem>
-              <MenuItem onClick={onDelete}><ListItemIcon><DeleteIcon fontSize="small" sx={{ color: "rgba(255, 80, 80, 0.7)", fontSize: "15px" }} /></ListItemIcon><Typography variant="body2" color="initial" ml={-1.5}>Delete</Typography></MenuItem>
-            </Menu>
-          </div>
-        );
-      },
-    },
+    
   ];
 
   return (
@@ -129,7 +81,7 @@ const Basic__Information = () => {
           <MyTableContainer
             columns={columns}
             data={rows}
-            tableHeading="Employee Basic Information"
+            tableHeading="Employee"
             isAddNewButton={true}
             customPageSize={10}
             route={'/employee/basic_information/AddEmployee'}
