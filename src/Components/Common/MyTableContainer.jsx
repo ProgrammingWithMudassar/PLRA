@@ -35,7 +35,7 @@ export default function MyTableContainer(props) {
           rows={data}
           columns={columns}
           getRowHeight={() => rowHeight} // Set the row height
-          // disableRowSelectionOnClick={true}
+          disableRowSelectionOnClick={true}
           columnHeaderHeight={40}
           initialState={{ pagination: { paginationModel: { page: 0, pageSize: customPageSize } } }}
           pageSizeOptions={[10, 20, 30]}

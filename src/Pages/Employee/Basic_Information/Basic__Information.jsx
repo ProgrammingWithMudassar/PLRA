@@ -21,6 +21,7 @@ import { useTheme } from '@mui/material/styles';
 import { Link, useNavigate } from 'react-router-dom'
 import Drawar_Tabbar from '../Drawar_Tabbar';
 import avartar from '../../../Assets/png/avatar.jpg'
+import "../../Styles.css"
 
 const renderNullInRed = (params) => {
   const value = params.value;
@@ -37,18 +38,15 @@ const Basic__Information = () => {
   const [dialogOpen, setDialogOpen] = useState(false);
   const [selectedRowData, setSelectedRowData] = useState(null);
   const theme = useTheme();
-  const navigate = useNavigate();
 
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
 
   const columns = [
-    { field: "employee_no", headerName: "Employee No", type: "string", width: 200, renderCell: renderNullInRed },
+    {
+      field: "employee_no", headerName: "Employee No", type: "string", width: 200, renderCell: renderNullInRed,
+      renderCell: (params) => (
+        <span className="table_first_column">{params.value}</span>
+      ),
+    },
     { field: "cnic", headerName: "CNIC", type: "string", width: 200, align: 'left', renderCell: renderNullInRed },
     {
       field: "name", headerName: "Name", type: "string", width: 200, renderCell: renderNullInRed,
@@ -277,7 +275,7 @@ const Basic__Information = () => {
                 <Typography variant="body2" color="initial" >{selectedRowData.father_name}</Typography>
               </Box>
             </Grid>
-            
+
             <Grid item xs={12} sx={{ textAlign: 'right', mt: -6, width: "350px" }}>
               <Link to={`/employee/basic_information/EditEmployee/${selectedRowData.id}`}>
                 <Button variant='contained' sx={{ width: "120px", mr: '20px' }} >Edit</Button>
