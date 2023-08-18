@@ -1,9 +1,10 @@
 import {
     faHome, faCog, faBars,
-    faAngleUp, faAngleDown
+    faAngleUp, faAngleDown, faPlus
 } from '@fortawesome/free-solid-svg-icons';
 
 
+
 export {
-    faHome, faCog, faBars, faAngleUp, faAngleDown,
+    faHome, faCog, faBars, faAngleUp, faAngleDown, faPlus
 };

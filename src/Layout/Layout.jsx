@@ -191,7 +191,7 @@ const Sidebar = () => {
                 <li key={data.key} style={{ cursor: 'pointer', with: "100%", }} className={open ? "open_sidebar" : "close_sidebar"} onClick={() => setOpen(true)}>
                   <Link to={`/${data.route}`} >
                     <Box className={open ? "sidebar_contant sidebar__li" : "close_sidebar sidebar__li"} >
-                      <FontAwesomeIcon icon={data.icon} style={{ color: "#3bd862", width: "25px" }} />
+                      <FontAwesomeIcon icon={data.icon} style={{ color: "#379237", width: "25px" }} />
                       {
                         open && <span style={{ marginLeft: "0.7rem" }}>
                           <Typography variant="body2" sx={{ color: theme.palette.common.black, width: "100%" }}>{data.text}</Typography>

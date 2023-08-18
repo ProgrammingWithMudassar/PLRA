@@ -7,6 +7,7 @@ import { faCirclePlus } from '@fortawesome/free-solid-svg-icons';
 import { useTheme } from '@mui/material/styles';
 import '../Styles.css'
 import { Link } from 'react-router-dom';
+import { faPlus } from '../../Assets/Icons/Icons';
 
 
 
@@ -22,8 +23,8 @@ export default function MyTableContainer(props) {
         {
           isAddNewButton ?
             <Link to={`${route}`}>
-              <Button variant='contained' sx={{ display: 'flex', alignItems: 'center' }}><span>
-                <FontAwesomeIcon icon={faCirclePlus} style={{ fontSize: "0.9rem", marginRight: "6px", paddingTop: "5px" }} /></span>Add New
+              <Button  sx={{ width: '15px', height: '2rem' , borderRadius: '10rem' }}>
+                <FontAwesomeIcon icon={faPlus} style={{fontSize: '1.4rem'}}/>
               </Button>
             </Link>
             :

@@ -10,7 +10,7 @@ const Theme = createTheme({
             white: "#fff",
         },
         primary: {
-            main: "#34C759",      // green
+            main: "#379237",      // green
             light: "#49EE73",     // Light green
             dark: "#0EA033",      // Dark green
             contrastText: "#fff", // White
@@ -165,14 +165,16 @@ const Theme = createTheme({
                     cursor: "pointer",
                     textTransform: 'none',
                     transition: "background-color 0.3s",
-                    boxShadow: "0px 0px 9px 5px rgba(231, 231, 231, 0.5)"
+                    "&:hover": {
+                        backgroundColor: 'rgba(41, 184, 77, 0.1)'
+                    }
                 },
                 contained: {
-                    backgroundColor: "rgb(52,199,89)",
+                    backgroundColor: "#379237",
                     color: "#fff",
                     borderRadius: 4,
                     "&:hover": {
-                        backgroundColor: "rgba(41,184,77,1)",
+                        backgroundColor: "#379237",
                         borderRadius: 4,
                         boxShadow: "0px 0px 9px 5px rgba(231, 231, 231, 0.5)"
                     },
@@ -180,11 +182,11 @@ const Theme = createTheme({
                 outlined: {
                     backgroundColor: "transparent",
                     color: "rgb(52,199,89)",
-                    border: "1px solid rgb(52,199,89)",
+                    border: "1px solid #379237",
                     borderRadius: 6,
 
                     "&:hover": {
-                        backgroundColor: "rgba(41,184,77,0.1)",
+                        backgroundColor: "#379237",
                         border: "1px solid rgb(52,199,89)",
                         borderRadius: 6,
                     },
@@ -232,7 +234,7 @@ const Theme = createTheme({
                     border: '1px solid rgb(52, 199, 89)',
                     borderRadius: '4px',
                     "& .MuiDataGrid-columnHeaders": {
-                        backgroundColor: "rgb(52,199,89)",
+                        backgroundColor: "#379237",
                         color: "#FFFFFF",
                         fontSize: 16,
                     },
@@ -315,4 +317,3 @@ const Theme = createTheme({
 });
 
 export default Theme;
-
