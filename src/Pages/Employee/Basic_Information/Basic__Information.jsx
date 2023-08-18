@@ -41,32 +41,11 @@ const Basic__Information = () => {
   const [dialogOpen, setDialogOpen] = useState(false);
   const [selectedRowData, setSelectedRowData] = useState(null);
   const theme = useTheme();
-  const navigate = useNavigate();
 
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
 
   const columns = [
-    {
-      field: "employee_no",
-      headerName: "Employee No",
-      type: "string",
-      width: 200,
-      renderCell: renderNullInRed,
-    },
-    {
-      field: "cnic",
-      headerName: "CNIC",
-      type: "string",
-      width: 200,
-      align: "left",
-      renderCell: renderNullInRed,
-    },
+    { field: "employee_no", headerName: "Employee No", type: "string", width: 200, renderCell: renderNullInRed },
+    { field: "cnic", headerName: "CNIC", type: "string", width: 200, align: 'left', renderCell: renderNullInRed },
     {
       field: "name",
       headerName: "Name",
@@ -85,29 +64,19 @@ const Basic__Information = () => {
       valueGetter: (params) => params.row.center.center_name || "",
     },
     {
-      field: "job",
-      headerName: "Job",
-      type: "string",
-      width: 150,
-      renderCell: renderNullInRed,
+      field: "job", headerName: "Job", type: "string", width: 150, renderCell: renderNullInRed,
       valueGetter: (params) => params.row.position.job.job_title || "",
     },
     {
-      field: "wingName",
-      headerName: "Wing Name",
-      type: "string",
-      width: 130,
-      renderCell: renderNullInRed,
+      field: "wingName", headerName: "Wing Name", type: "string", width: 130, renderCell: renderNullInRed,
       valueGetter: (params) => params.row.position.wing.wing_name || "",
     },
     {
-      field: "Action",
-      headerName: "Action",
-      type: "string",
-      width: 140,
+      field: 'Action', headerName: 'Action', type: 'string', width: 140,
 
       renderCell: (params) => {
         const [anchorEl, setAnchorEl] = React.useState(null);
+
 
         const open = Boolean(anchorEl);
         const handleClick = (event) => {
@@ -116,27 +85,18 @@ const Basic__Information = () => {
         const handleClose = () => setAnchorEl(null);
         const onEdit = () => {
           handleClose();
-        };
+        }
         const onDelete = () => handleClose();
         const onView = () => {
           setSelectedRowData(params.row); // Set selected row data
           setDialogOpen(true); // Open the dialog
           handleClose();
-        };
+        };;
+        console.log("hi", selectedRowData);
 
         return (
-          <div>
-            <Button
-              onClick={handleClick}
-              size="small"
-              variant="contained"
-              aria-controls={open ? "dropdown-menu" : undefined}
-              aria-haspopup="true"
-              aria-expanded={open ? "true" : undefined}
-              sx={{ py: 0, px: 2, fontSize: "0.8rem" }}
-            >
-              Action
-            </Button>
+          <div >
+            <Button onClick={handleClick} size="small" variant='contained' aria-controls={open ? 'dropdown-menu' : undefined} aria-haspopup="true" aria-expanded={open ? 'true' : undefined} sx={{ py: 0, px: 2, fontSize: "0.8rem" }}>Action</Button>
             <Menu
               anchorEl={anchorEl}
               id="dropdown-menu"
@@ -146,60 +106,21 @@ const Basic__Information = () => {
               PaperProps={{
                 elevation: 0,
                 sx: {
-                  overflow: "visible",
-                  mt: 1.5,
-                  filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
-                  "&:before": {
-                    content: '""',
-                    display: "block",
-                    position: "absolute",
-                    top: 0,
-                    right: 14,
-                    width: 10,
-                    zIndex: 0,
-                    height: 10,
-                    bgcolor: "background.paper",
-                    transform: "translateY(-50%) rotate(45deg)",
+                  overflow: 'visible', mt: 1.5,
+                  filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
+                  '&:before': {
+                    content: '""', display: 'block',
+                    position: 'absolute', top: 0, right: 14, width: 10, zIndex: 0,
+                    height: 10, bgcolor: 'background.paper', transform: 'translateY(-50%) rotate(45deg)',
                   },
                 },
               }}
-              transformOrigin={{ horizontal: "right", vertical: "top" }}
-              anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
+              transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+              anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
             >
-              <MenuItem onClick={onView}>
-                <ListItemIcon>
-                  {" "}
-                  <VisibilityIcon
-                    fontSize="small"
-                    sx={{ color: "rgba(255, 179, 46, 0.7)", fontSize: "15px" }}
-                  />{" "}
-                </ListItemIcon>
-                <Typography variant="body2" color="initial" ml={-1.5}>
-                  View
-                </Typography>
-              </MenuItem>
-              <MenuItem onClick={onEdit}>
-                <ListItemIcon>
-                  <EditIcon
-                    fontSize="small"
-                    sx={{ color: "rgba(101, 176, 255, 0.7)", fontSize: "15px" }}
-                  />
-                </ListItemIcon>
-                <Typography variant="body2" color="initial" ml={-1.5}>
-                  Edit
-                </Typography>
-              </MenuItem>
-              <MenuItem onClick={onDelete}>
-                <ListItemIcon>
-                  <DeleteIcon
-                    fontSize="small"
-                    sx={{ color: "rgba(255, 80, 80, 0.7)", fontSize: "15px" }}
-                  />
-                </ListItemIcon>
-                <Typography variant="body2" color="initial" ml={-1.5}>
-                  Delete
-                </Typography>
-              </MenuItem>
+              <MenuItem onClick={onView}><ListItemIcon> <VisibilityIcon fontSize="small" sx={{ color: "rgba(255, 179, 46, 0.7)", fontSize: "15px" }} /> </ListItemIcon><Typography variant="body2" color="initial" ml={-1.5}>View</Typography></MenuItem>
+              <MenuItem onClick={onEdit}><ListItemIcon><EditIcon fontSize="small" sx={{ color: "rgba(101, 176, 255, 0.7)", fontSize: "15px" }} /></ListItemIcon><Typography variant="body2" color="initial" ml={-1.5}>Edit</Typography></MenuItem>
+              <MenuItem onClick={onDelete}><ListItemIcon><DeleteIcon fontSize="small" sx={{ color: "rgba(255, 80, 80, 0.7)", fontSize: "15px" }} /></ListItemIcon><Typography variant="body2" color="initial" ml={-1.5}>Delete</Typography></MenuItem>
             </Menu>
           </div>
         );
@@ -235,7 +156,7 @@ const Basic__Information = () => {
           <MyTableContainer
             columns={columns}
             data={rows}
-            tableHeading="Employee Basic Information"
+            tableHeading="Employee"
             isAddNewButton={true}
             customPageSize={10}
             route={"/employee/basic_information/AddEmployee"}
@@ -457,18 +378,10 @@ const Basic__Information = () => {
                 </Typography>
               </Box>
             </Grid>
-
-            <Grid
-              item
-              xs={12}
-              sx={{ textAlign: "right", mt: -6, width: "350px" }}
-            >
-              <Link
-                to={`/employee/basic_information/EditEmployee/${selectedRowData.id}`}
-              >
-                <Button variant="contained" sx={{ width: "120px", mr: "20px" }}>
-                  Edit
-                </Button>
+            
+            <Grid item xs={12} sx={{ textAlign: 'right', mt: -6, width: "350px" }}>
+              <Link to={`/employee/basic_information/EditEmployee/${selectedRowData.id}`}>
+                <Button variant='contained' sx={{ width: "120px", mr: '20px' }} >Edit</Button>
               </Link>
               <Button
                 variant="outlined"
