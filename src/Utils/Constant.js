@@ -18,6 +18,7 @@ const PrivateRoutes = () => {
     return (
         varify_user() ?
             <Outlet /> : <Navigate to='/login' />
+            // This is hakim commit
 
     )
 }

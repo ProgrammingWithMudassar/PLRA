@@ -3,12 +3,14 @@
     display: inline-block;
     margin-bottom: 20px;
 }
-.InOneLine{
+
+.InOneLine {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
+
 .sectionTitle::before {
     content: '';
     height: 3px;
@@ -49,6 +51,7 @@
     width: 30%;
     font-size: 14px;
 }
+
 label {
     font-size: 15px;
     font-weight: 600;
@@ -75,7 +78,8 @@ label {
     font-size: 12px;
     color: var(--light-gray);
 }
-.Basic_Profile_Img{
+
+.Basic_Profile_Img {
     width: 12rem;
     height: 12rem;
     background-color: var(--light-gray);
@@ -84,4 +88,15 @@ label {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.table_first_column {
+    transition: color 0.3s;
+    /* Smooth color transition on hover */
+}
+
+.table_first_column:hover {
+    color: var(--green-main);
+    cursor: pointer;
+    text-decoration: underline;
 }
