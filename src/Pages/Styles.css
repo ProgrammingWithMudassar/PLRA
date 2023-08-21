@@ -85,3 +85,13 @@ label {
     justify-content: center;
     align-items: center;
 }
+.table_first_column {
+    transition: color 0.3s;
+    /* Smooth color transition on hover */
+}
+
+.table_first_column:hover {
+    color: var(--green-main);
+    cursor: pointer;
+    text-decoration: underline;
+}

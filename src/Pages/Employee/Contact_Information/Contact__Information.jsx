@@ -5,12 +5,7 @@ import { Typography, Box, Container } from "@mui/material";
 const Contact__Information = () => {
   return (
     <>
-      <Box className="sectionTitle">
-        <Typography variant="h5" color="initial">
-          Contact Information
-        </Typography>
-      </Box>
-      <Container maxWidth="lg"></Container>
+    
     </>
   );
 };

@@ -1,4 +1,4 @@
-import React from 'react';
+ import React from 'react';
 import {
     Login, Register, AddEmployee,
     Dashboard, Employee, Basic__Information, Personal__Information,
