@@ -18,7 +18,7 @@ const columns = [
     valueGetter: (params) => `${params.row.education || ""}`,
   },
   {
-    field: "institution_name", headerName: "Name", type: "string", width: 200, renderCell: renderNullInRed,
+    field: "institution_name", headerName: "Name", type: "string", width: 230, renderCell: renderNullInRed,
     valueGetter: (params) => params.row.institution_name || "",
   },
   {
@@ -38,15 +38,15 @@ const columns = [
     valueGetter: (params) => params.row.scale || "",
   },
   {
-    field: "employee", headerName: "Employee Name", type: "string", width: 150, renderCell: renderNullInRed,
+    field: "employee", headerName: "Employee Name", type: "string", width: 200, renderCell: renderNullInRed,
     valueGetter: (params) => params.row.employee || "",
   },
   {
-    field: "level_of_education", headerName: "Education Level", type: "string", width: 130, renderCell: renderNullInRed,
+    field: "level_of_education", headerName: "Education Level", align:'center',type: "string", width: 150, renderCell: renderNullInRed,
     valueGetter: (params) => params.row.level_of_education || "",
   },
   {
-    field: 'institution_country', headerName: 'Country', type: 'string', width: 140,renderCell: renderNullInRed,
+    field: 'institution_country', headerName: 'Country', type: 'string', width: 180,renderCell: renderNullInRed,
     valueGetter: (params) => params.row.institution_country|| "",},
 
 ];

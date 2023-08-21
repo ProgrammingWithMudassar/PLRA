@@ -1173,7 +1173,7 @@
       scale: 2,
       employee: "Hakim Nabi",
       level_of_education: 2,
-      institution_country: 1,
+      institution_country: 'Pakistan',
     },
     {
       id:4,
@@ -1187,7 +1187,7 @@
       scale: 2,
       employee: "Shan Masood ",
       level_of_education: 2,
-      institution_country: 1,
+      institution_country: 'Pakistan',
     },
   ];
   //Training
