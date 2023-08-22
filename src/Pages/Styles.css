@@ -81,7 +81,7 @@ label {
 
 .Basic_Profile_Img {
     width: 12rem;
-    height: 12rem;
+    height: 10.2rem;
     background-color: var(--light-gray);
     border-radius: 50%;
     box-shadow: 0px 0px 10px 2px #dcdcdc;
@@ -99,4 +99,32 @@ label {
     color: var(--green-main);
     cursor: pointer;
     text-decoration: underline;
+}
+
+.close {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    padding: 4px;
+}
+
+.close:hover {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    background-color: #C1E8C1;
+    border-radius: 50%;
+}
+
+.dataView {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+
+.dataView label {
+    display: inline-block;
+    width: 140px;
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { styled, useTheme } from '@mui/material/styles';
 import { Box, Toolbar, IconButton, Avatar } from '@mui/material';
 import MuiDrawer from '@mui/material/Drawer';
@@ -12,7 +12,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faBars, faAngleUp, faAngleDown } from '../Assets/Icons/Icons.js';
 import DropDown from '../Components/Common/DropDown.jsx';
 import { TabBar } from '../Components/index.js';
-import "./Style.css"
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
@@ -20,7 +19,9 @@ import Tooltip from '@mui/material/Tooltip';
 import PersonAdd from '@mui/icons-material/PersonAdd';
 import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
-
+import { useDispatch } from 'react-redux';
+import { selectButton } from '../Features/Counter/CounterSlice.js';
+import "./Style.css"
 
 
 const drawerWidth = 240;
@@ -91,8 +92,9 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 const Sidebar = () => {
   const theme = useTheme();
   const [open, setOpen] = useState(true);
-
+  const [anchorEl, setAnchorEl] = React.useState(null);
   const [activeDropdown, setActiveDropdown] = useState(null);
+
   const handleDropdownClick = (index) => {
     setActiveDropdown((prevState) => (prevState === index ? null : index));
   };
@@ -103,8 +105,6 @@ const Sidebar = () => {
   const nestedBar = () => {
     setActiveDropdown(null)
   }
-
-  const [anchorEl, setAnchorEl] = React.useState(null);
   const openMenu = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -112,11 +112,25 @@ const Sidebar = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+  const handleClickSidebar = () => {
+    setOpen(true);
+  };
+
+
+  //Redux
+  const dispatch = useDispatch();
+  const handleClickWithRedux = (id) => {
+    dispatch(selectButton(id));
+  }
+
+
 
 
   return (
     <Box sx={{ display: 'flex', width: '100%' }}>
-      <AppBar position="fixed" sx={{ backgroundColor: theme.palette.common.white, boxShadow: "0px 1px 8px rgba(0, 0, 0, 0.1)" }}>
+      <AppBar position="fixed" sx={{ backgroundColor: theme.palette.common.white, 
+        boxShadow: "0px 0px 0px rgba(0, 0, 0, 0)", borderBottom:"1px solid #d5d5d4"
+         }}>
         <Toolbar sx={{ display: 'flex' }}>
           {/* <Typography variant="h6" sx={{ width: '18%', color: theme.palette.common.black }}>PLRA</Typography> */}
           <IconButton onClick={SideabarController}>
@@ -138,13 +152,8 @@ const Sidebar = () => {
             }}>
               <FontAwesomeIcon icon={Sidebar_header.messageIcon} style={{ fontSize: "20px", cursor: 'pointer' }} />
               <FontAwesomeIcon icon={Sidebar_header.settingIcon} style={{ fontSize: "20px", cursor: 'pointer' }} />
-
-
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}
-                onClick={handleClick}
-              >
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }} onClick={handleClick} >
                 <Avatar alt="" src={Sidebar_header.avatar} sx={{ cursor: 'pointer', borderRadius: "10px" }} />
-                <FontAwesomeIcon icon={Sidebar_header.avatarDown} style={{ fontSize: "20px", cursor: 'pointer' }} />
               </Box>
               <Menu
                 anchorEl={anchorEl}
@@ -181,14 +190,13 @@ const Sidebar = () => {
           </Box>
         </Toolbar>
       </AppBar>
-      <Drawer variant="permanent" open={open} >
+      <Drawer variant="permanent" open={open} sx={{ backgroundColor: theme.palette.common.white }}>
         <DrawerHeader />
-        <Divider />
         <Box className="sidebar custom-scrollbar">
-          <Box mt={0} onClick={() => setOpen(true)}>
+          <Box mt={0} onClick={handleClickSidebar}>
             <ul className='sidebar__list'>
               {SlideBarData.map((data, index) => (
-                <li key={data.key} style={{ cursor: 'pointer', with: "100%", }} className={open ? "open_sidebar" : "close_sidebar"} onClick={() => setOpen(true)}>
+                <li key={data.key} style={{ cursor: 'pointer', with: "100%", }} className={open ? "open_sidebar" : "close_sidebar"} onClick={() => handleClickWithRedux(data.key)}>
                   <Link to={`/${data.route}`} >
                     <Box className={open ? "sidebar_contant sidebar__li" : "close_sidebar sidebar__li"} >
                       <FontAwesomeIcon icon={data.icon} style={{ color: "#379237", width: "25px" }} />
@@ -203,10 +211,11 @@ const Sidebar = () => {
               ))}
             </ul>
           </Box>
-
         </Box>
-      </Drawer>
-      <Box sx={{ minHeight: "100vh", flexGrow: 1, p: 3, maxWidth: "100%", overflowX: 'hidden' }} onClick={() => { setOpen(false); setActiveDropdown(false); }}>
+      </Drawer> 
+      <Box
+        sx={{ minHeight: "100vh", flexGrow: 1, py: 3, px: 2, maxWidth: "100%", overflowX: 'hidden' }}
+        onClick={() => { setOpen(false); setActiveDropdown(false) }}>
         <DrawerHeader />
         <TabBar />
         <Handling__Route />

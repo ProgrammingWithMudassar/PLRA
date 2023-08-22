@@ -1,0 +1,6 @@
+1- table column expexdible
+2- View next and back functionality
+3- color should be same ( max 2 )
+4- Calendar Icon should be changed , Choose Files Icons should be changes
+5- font should come from downloaded files
+6- table pagination on leftside and font should be same & small ( need to find class )

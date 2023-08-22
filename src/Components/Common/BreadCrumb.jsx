@@ -1,38 +1,67 @@
 import React from "react";
-import PropTypes from 'prop-types';
-import { Link } from "@mui/material";
-import Breadcrumbs from "@mui/material/Breadcrumbs";
+import PropTypes from "prop-types";
 import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
+import { useTheme } from "@mui/material/styles";
+import { Button } from "@mui/material";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from 'react-router-dom'
+import { faPlus, faPenToSquare, faTrash, faFloppyDisk } from "../../Assets/Icons/Icons";
 
 const Breadcrumb = (props) => {
+  const theme = useTheme();
+
+  const buttonIcons = {
+    plus: <FontAwesomeIcon icon={faPlus} />,
+    edit: <FontAwesomeIcon icon={faPenToSquare} />,
+    delete: <FontAwesomeIcon icon={faTrash} />,
+    save: <FontAwesomeIcon icon={faFloppyDisk} />,
+  };
+
   return (
-    <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 3, mt: 2 }}>
-      <Typography variant="" component="h4" sx={{  margin: 0, fontWeight: "blod" }}>
-        {props.title}
-      </Typography>
-      <Box sx={{ marginLeft: 'auto' }}>
-        <Breadcrumbs aria-label="breadcrumb">
-          {/* <Link color="inherit" href="#" sx={{ textDecoration: 'none', color: 'inherit' }}>{props.title}</Link> */}
-          <Link
-            color="inherit"
-            href="#"
-            aria-current="page"
-            sx={{ textDecoration: 'none', color: 'inherit' }}>
-            <Typography variant="body2" color="initial">
-              {props.breadcrumbItem}
-            </Typography>
-          </Link>
-        </Breadcrumbs>
+    <Box
+      sx={{
+        marginLeft: "auto",
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        mb: 1,
+        mt: 1,
+        pl:0.3
+      }}
+    >
+      <Box sx={{ display: "flex", flexDirection: "column" }}>
+        <Typography variant="h5" component="h4" sx={{ margin: 0, fontWeight: "bold" }}>
+          {props.title}
+        </Typography>
+        <Link underline="hover" to="/">
+          <Typography variant="body2" sx={{  mt: "-3px" }}>
+            {props.breadcrumbItem}
+          </Typography>
+        </Link>
       </Box>
+      <div style={{ justifyContent: "flex-end", display: "flex", padding: "0"}}>
+        {props.buttons.map((buttonType, index) => (
+          <Link
+            key={index}
+            component={Button}
+            to={props.routes[buttonType] || "#"}
+            sx={{ fontSize: "1.4rem", height: "2rem", borderRadius: "20rem", marginRight: "8px" }} >
+            <Button>
+              {buttonIcons[buttonType]}
+            </Button>
+          </Link>
+        ))}
+      </div>
     </Box>
   );
 };
 
 Breadcrumb.propTypes = {
   breadcrumbItem: PropTypes.string,
-  title: PropTypes.string
+  title: PropTypes.string,
+  buttons: PropTypes.arrayOf(PropTypes.oneOf(["plus", "edit", "delete", "save"])),
+  routes: PropTypes.objectOf(PropTypes.string),
 };
 
 export default Breadcrumb;

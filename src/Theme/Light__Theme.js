@@ -1,13 +1,11 @@
 import { createTheme } from '@mui/material';
-
-const font = 'Nunito, sans-serif';
-
+const font = 'Segoe UI';
 const Theme = createTheme({
     palette: {
         mode: 'light',
         common: {
-            black: "#000",
-            white: "#fff",
+            black: "#201F1E",
+            white: "#F3F2F1",
         },
         primary: {
             main: "#379237",      // green
@@ -45,8 +43,8 @@ const Theme = createTheme({
             dark: "#388E3C",      // Dark Green
             contrastText: "#fff", // White
         },
-        gray:{
-            main:"#A1A1A1"
+        gray: {
+            main: "#A1A1A1"
         },
         grey: {
             50: "#FAFAFA",        // Very Light Grey
@@ -96,6 +94,7 @@ const Theme = createTheme({
             fontSize: "1.2rem",
             lineHeight: 1.334,
             letterSpacing: "0em",
+            color:"#201F1E"
         },
         h6: {
             fontWeight: '500',
@@ -126,31 +125,42 @@ const Theme = createTheme({
             fontSize: "14px",
             lineHeight: 1.43,
             letterSpacing: "0.01071em",
-            color: "#212121"
+            color:"#201F1E"
         },
     },
     components: {
-        // Inputs 
+        // Inputs
         MuiTextField: {
             styleOverrides: {
                 root: {
                     "& .MuiInputBase-input": {
                         padding: "0.35rem",
-                        border: "1ox solid #ced4da",
+                        border: "1ox solid #379237",
                         fontSize: "0.85rem",
                     },
                     "& .MuiOutlinedInput-root": {
                         borderRadius: "0.3rem",
                         "&:hover fieldset": {
-                            border: "1ox solid #7EEE9B"
+                            border: "1ox solid #379237"
                         },
                         "&.Mui-focused fieldset": {
-                            border: "1ox solid #7EEE9B"
+                            border: "1ox solid #379237"
                         },
                     },
+                    '& input[type="date"]::-webkit-calendar-picker-indicator': {
+                        // Customize the appearance of the date picker icon here
+                        filter: 'invert(0.5)', // Example: Change icon color using filter
+                        // ... Other custom styles ...
+                      },
+                   
                     width: '100%',
                     height: "33px"
                 },
+                // DateRangePicker: {
+                //     icon: {
+                //       color: "red", 
+                //     },
+                // },
             },
         },
 
@@ -158,14 +168,16 @@ const Theme = createTheme({
         MuiButton: {
             styleOverrides: {
                 root: {
-                    padding: "0.17rem 2rem",
+                    padding: "0.3rem 0rem",
                     border: "none",
-                    borderRadius: 4,
+                    borderRadius: 30,
                     fontSize: 16,
                     cursor: "pointer",
                     textTransform: 'none',
                     transition: "background-color 0.3s",
-                    boxShadow: "0px 0px 9px 5px rgba(231, 231, 231, 0.5)"
+                    "&:hover": {
+                        backgroundColor: 'rgba(41, 184, 77, 0.1)'
+                    }
                 },
                 contained: {
                     backgroundColor: "#379237",
@@ -182,7 +194,6 @@ const Theme = createTheme({
                     color: "rgb(52,199,89)",
                     border: "1px solid #379237",
                     borderRadius: 6,
-
                     "&:hover": {
                         backgroundColor: "#379237",
                         border: "1px solid rgb(52,199,89)",
@@ -197,13 +208,14 @@ const Theme = createTheme({
             styleOverrides: {
                 root: {
                     color: "#495057",
-                    fontSize: "0.95rem",
-                    marginTop: "-0.5rem"
+                    fontSize: "0.85rem",
+                    marginTop: "-0.5rem",
+                    fontFamily:font,
                 },
             },
         },
 
-        // Select 
+        // Select
         MuiSelect: {
             styleOverrides: {
                 root: {
@@ -229,14 +241,15 @@ const Theme = createTheme({
         MuiDataGrid: {
             styleOverrides: {
                 root: {
-                    border: '1px solid rgb(52, 199, 89)',
-                    borderRadius: '4px',
+                    border: '1px solid #379237',
+                    borderRadius: '6px',
+                    backgroundColor: "#F9F8F7",
+                    color:"#201F1E",
                     "& .MuiDataGrid-columnHeaders": {
                         backgroundColor: "#379237",
                         color: "#FFFFFF",
-                        fontSize: 16,
+                        fontSize: 14,
                     },
-
                     '& .MuiIconButton-root': {
                         Color: "#000",
                     },
@@ -245,7 +258,7 @@ const Theme = createTheme({
                     },
                 },
                 columnSeparator: {
-                    height: "200px"
+                    height: "120px"
                 },
                 virtualScroller: {
                     '&::-webkit-scrollbar': {
@@ -270,8 +283,9 @@ const Theme = createTheme({
         MuiCard: {
             styleOverrides: {
                 root: {
-                    boxShadow: "0px 0px 19px 9px rgba(231, 231, 231, 0.7)",
-                    borderRadius:'8px'
+                    // boxShadow: "0px 0px 19px 9px rgba(231, 231, 231, 0.7)",
+                    borderRadius: '8px',
+                    backgroundColor:"#F9F8F7"
                 },
             },
         },
@@ -282,32 +296,44 @@ const Theme = createTheme({
                 paper: {
                     width: '90%', // Set the desired width here
                     maxWidth: 'none',
-                    borderRadius: "10px"
+                    borderRadius: "10px",
+                    backgroundColor: "#F9F8F7",
                 },
             },
         },
 
+        //Drawar
+        MuiDrawer: {
+            styleOverrides: {
+              paper: {
+                backgroundColor: "#F3F2F1", // Set your desired background color here
+              },
+            },
+        },
 
         //TabBar Customization
         MuiTab: {
             styleOverrides: {
                 root: {
+                    color:"#201F1E",
                     fontSize: "13px",
                     textTransform: 'none',
+                    fontWeight:600
                 },
             },
         },
         MuiTabList: {
             styleOverrides: {
                 root: {
-                    maxHeight:"20px"
+                    color:"#201F1E",
+                    maxHeight: "20px"
                 },
             },
         },
         MuiTabList: {
             styleOverrides: {
                 root: {
-                    minHeight: '30px', 
+                    minHeight: '30px',
                 },
             },
         },
@@ -315,4 +341,3 @@ const Theme = createTheme({
 });
 
 export default Theme;
-

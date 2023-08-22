@@ -1,13 +1,17 @@
 import React, { useState } from 'react'
 import "../../../Styles.css"
 import {
-  Card, CardContent, MenuItem, Menu, TextField,
-  Typography, Box, Button, Grid, InputLabel, Select
+  Card, CardContent, MenuItem, TextField,
+   Box, Button, Grid, InputLabel, Select,
 } from "@mui/material";
 import Breadcrumb from '../../../../Components/Common/BreadCrumb.jsx';
 import { rows } from '../../../../Data/Dummy_Data/Dummy__Data.js'
 import { useTheme } from '@mui/material/styles';
 import { useParams } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faXmark, faPenToSquare, faFloppyDisk } from '../../../../Assets/Icons/Icons.js';
+
+
 
 
 const AddEmployee = () => {
@@ -50,11 +54,32 @@ const AddEmployee = () => {
     "Ms",
   ];
 
+
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <>
-      <Breadcrumb title="Add Employee" breadcrumbItem="Employee / Basic Information / Add Employee" />
-      <Box component={Card} sx={{ mt: 3, pt: 2 }}>
+      <Breadcrumb
+        title="Employee"
+        breadcrumbItem="Employee / Basic Information"
+        buttons={[""]}
+        routes={{
+          plus: "/employee/personal_information",
+        }}
+      />
+      <Box component={Card} sx={{ mt: 1}}>
         <CardContent>
+          <Box sx={{ textAlign:'right'}}>
+            <Button><FontAwesomeIcon icon={faFloppyDisk} /></Button>
+          </Box>
           <form>
             <Grid container spacing={2} >
               <Grid item xs={12} md={4} >
@@ -171,9 +196,6 @@ const AddEmployee = () => {
               </Grid>
             </Grid>
           </form>
-          <Grid item xs={12} sx={{ textAlign: 'center', mt: 4 }}>
-            <Button variant='contained'>Add Information</Button>
-          </Grid>
         </CardContent>
       </Box>
     </>
