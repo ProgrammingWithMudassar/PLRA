@@ -16,7 +16,7 @@ export default function MyTableContainer(props) {
 
   const { columns, data, customPageSize, tableHeading, isAddNewButton, route } = props
   return (
-    <Box sx={{ width: '100%', overflowX: 'scroll',borderRadius: "6px", height: '70vh', overflow: 'hidden' }}>
+    <Box sx={{ width: '100%', overflowX: 'scroll',borderRadius: "6px", height: '71.3vhvh', overflow: 'hidden' }}>
       {/* <Box sx={{ mb: 2, display: 'flex', justifyContent: 'space-between' }}>
         <Typography variant="h4" component="h4" sx={{ fontSize: '1.125rem', margin: 0, fontWeight: "blod" }}>{tableHeading}</Typography>
         {
@@ -31,7 +31,7 @@ export default function MyTableContainer(props) {
         }
       </Box> */}
 
-      <Box style={{ height: '70vh', width: 'auto' }}>
+      <Box style={{ height: '71.3vh', width: 'auto' }}>
         <DataGrid sx={{ '&.MuiDataGrid-root .MuiDataGrid-cell:focus-within': { outline: 'none' }, fontSize: '14px' }}
           rows={data}
           columns={columns}

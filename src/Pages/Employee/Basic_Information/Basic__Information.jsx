@@ -13,7 +13,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import Drawar_Tabbar from '../Drawar_Tabbar';
 import avartar from '../../../Assets/png/avatar.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faXmark, faPenToSquare, faPlus } from '../../../Assets/Icons/Icons.js';
+import { faXmark, faPenToSquare, faFloppyDisk } from '../../../Assets/Icons/Icons.js';
 import Tooltip from '@mui/material/Tooltip';
 import "../../Styles.css"
 
@@ -31,6 +31,10 @@ const Basic__Information = () => {
   const [open, setOpen] = React.useState(false);
   const [dialogOpen, setDialogOpen] = useState(false);
   const [selectedRowData, setSelectedRowData] = useState(null);
+  const [edit, setEdit] = useState(true);
+
+
+
   const theme = useTheme();
 
 
@@ -66,6 +70,10 @@ const Basic__Information = () => {
     },
 
   ];
+
+  const handleEdit = () => {
+    setEdit(!edit)
+  }
 
   return (
     <>
@@ -110,100 +118,129 @@ const Basic__Information = () => {
             </Grid>
 
             <Drawar_Tabbar />
-            <Grid item xs={12} mt={-5} sx={{ display: "flex", justifyContent: "flex-end" }} >
-              <Link to="/employee/basic_information/AddEmployee">
-                <Tooltip title="Edit">
-                  <Button sx={{ mt: -3 }}>
-                    <FontAwesomeIcon icon={faPenToSquare} />
-                  </Button>
-                </Tooltip>
-              </Link>
+            <Grid item xs={12} mt={-3} sx={{ display: "flex", justifyContent: "flex-end" }} >
+              {
+                edit ?
+                  <Tooltip title="Save">
+                    <Button sx={{ mt: -3 }}>
+                      <FontAwesomeIcon icon={faFloppyDisk} />
+                    </Button>
+                  </Tooltip>
+                  :
+                  null
+              }
+              <Tooltip title="Edit">
+                <Button sx={{ mt: -3 }} onClick={handleEdit}>
+                  <FontAwesomeIcon icon={faPenToSquare} />
+                </Button>
+              </Tooltip>
+
             </Grid>
-            <Grid item xs={12} md={3} mt={-6} sx={{ height: '100%', display: 'flex', alignItems: 'center' }}>
+            <Grid item xs={12} md={3} mt={-6} sx={{ height: '100%' }}>
               <Box className="Basic_Profile_Img" sx={{ mb: 4, objectFit: 'contain', overflow: 'hidden' }}>
                 <img src={avartar} alt="" width={200} />
               </Box>
-            </Grid>
-
-            <Grid item xs={12} md={4} mt={-6}>
               <Box className="dataView">
-                <label name="name">Employee No :</label>
-                <TextField id="" label="" value={selectedRowData.employee_no} disabled/>
+                <label name="name" style={{ width: "40%" }}>Service Duration:</label>
+                <Typography variant="body2" color="initial" >{selectedRowData.service_duration}</Typography>
               </Box>
               <Box className="dataView">
-                <label name="name">Name :</label>
-                <TextField id="" label="" defaultValue={selectedRowData.first_name}  />
-              </Box>
-              <Box className="dataView">
-                <label name="name">Father Name:</label>
-                <Typography variant="body2" color="initial" >{selectedRowData.father_name}</Typography>
-              </Box>
-              <Box className="dataView">
-                <label name="name">CNIC:</label>
+                <label name="name" style={{ width: "40%" }}>CNIC:</label>
                 <Typography variant="body2" color="initial" >{selectedRowData.cnic}</Typography>
               </Box>
               <Box className="dataView">
+                <label name="name" style={{ width: "40%" }}>Job:</label>
+                <Typography variant="body2" color="initial" >{selectedRowData.position.job.job_title}</Typography>
+              </Box>
+            </Grid>
+
+            {/* Second */}
+            <Grid item xs={12} md={4} mt={-6}>
+              <Box className="dataView">
+                <label name="name">Employee No :</label>
+                <TextField id="" label="" defaultValue={selectedRowData.employee_no} disabled={!edit} />
+              </Box>
+              <Box className="dataView">
+                <label name="name">Title :</label>
+                <TextField id="" label="" defaultValue={selectedRowData.title.employee_title} disabled={!edit} />
+              </Box>
+              <Box className="dataView">
+                <label name="name">Name :</label>
+                <TextField id="" label="" defaultValue={selectedRowData.first_name} disabled={!edit} />
+              </Box>
+              <Box className="dataView">
+                <label name="name">Father Name:</label>
+                <TextField id="" label="" defaultValue={selectedRowData.father_name} disabled={!edit} />
+              </Box>
+              <Box className="dataView">
+                <label name="name">CNIC:</label>
+                <TextField id="" label="" defaultValue={selectedRowData.cnic} disabled={!edit} />
+              </Box>
+              <Box className="dataView">
                 <label name="name">Phone Number:</label>
-                <Typography variant="body2" color="initial" >{selectedRowData.phoneNumber}</Typography>
+                <TextField id="" label="" defaultValue={selectedRowData.phoneNumber} disabled={!edit} />
               </Box>
               <Box className="dataView">
                 <label name="name">Passport Number:</label>
-                <Typography variant="body2" color="initial" >{selectedRowData.passport_number}</Typography>
+                <TextField id="" label="" defaultValue={selectedRowData.passport_number} disabled={!edit} />
               </Box>
               <Box className="dataView">
                 <label name="name">Joining Date:</label>
-                <Typography variant="body2" color="initial" >{selectedRowData.date_of_joining}</Typography>
+                <TextField id="" label="" defaultValue={selectedRowData.date_of_joining} disabled={!edit} />
               </Box>
               <Box className="dataView">
                 <label name="name">Reporting Officer:</label>
-                <Typography variant="body2" color="initial" >{selectedRowData.reporting_officer}</Typography>
+                <TextField id="" label="" defaultValue={selectedRowData.reporting_officer} disabled={!edit} />
               </Box>
-              
+              <Box className="dataView">
+                <label name="name">Assigning Officer:</label>
+                <TextField id="" label="" defaultValue={selectedRowData.counter_assigning_officer} disabled={!edit} />
+              </Box>
             </Grid>
 
+            {/* Third  */}
             <Grid item xs={12} md={4} mt={-6}>
               <Box className="dataView">
                 <label name="name">Center Name:</label>
-                <Typography variant="body2" color="initial" >{selectedRowData.center.center_name}</Typography>
+                <TextField id="" label="" defaultValue={selectedRowData.center.center_name} disabled={!edit} />
               </Box>
               <Box className="dataView">
-                <label name="name">Region:</label>
-                <Typography variant="body2" color="initial" >{selectedRowData.center.region}</Typography>
+                <label name="name">District:</label>
+                <TextField id="" label="" defaultValue={selectedRowData.domicile_district} disabled={!edit} />
               </Box>
               <Box className="dataView">
-                <label name="name">Domicile District:</label>
-                <Typography variant="body2" color="initial" >{selectedRowData.domicile_district}</Typography>
+                <label name="name">Tehsil:</label>
+                <TextField id="" label="" defaultValue={selectedRowData.center.tehsil} disabled={!edit} />
               </Box>
               <Box className="dataView">
-                <label name="name">Service Duration:</label>
-                <Typography variant="body2" color="initial" >{selectedRowData.service_duration}</Typography>
+                <label name="name">Job :</label>
+                <TextField id="" label="" defaultValue={selectedRowData.position.job.job_title} disabled={!edit} />
               </Box>
-              {/* <Box className="dataView">
-                <label name="name">Job:</label>
-                <Typography variant="body2" color="initial" >{selectedRowData.position.job.job_title}</Typography>
-              </Box> */}
               <Box className="dataView">
-                <label name="name">Job Abbrivation:</label>
-                <Typography variant="body2" color="initial" >{selectedRowData.position.job_level.job_abbrivation}</Typography>
+                <label name="name">Job Level:</label>
+                <TextField id="" label="" defaultValue={selectedRowData.position.job_level.job} disabled={!edit} />
               </Box>
               <Box className="dataView">
                 <label name="name">Position:</label>
-                <Typography variant="body2" color="initial" >{selectedRowData.position.position_id}</Typography>
+                <TextField id="" label="" defaultValue={selectedRowData.position.position_id} disabled={!edit} />
               </Box>
               <Box className="dataView">
                 <label name="name">Position Type:</label>
-                <Typography variant="body2" color="initial" >{selectedRowData.position.position_type.position_type_name}</Typography>
+                <TextField id="" label="" defaultValue={selectedRowData.position.position_type.position_type_name} disabled={!edit} />
+              </Box>
+              <Box className="dataView">
+                <label name="name">PPG Level:</label>
+                <TextField id="" label="" defaultValue={selectedRowData.position.job.ppg_level} disabled={!edit} />
               </Box>
               <Box className="dataView">
                 <label name="name">Wing:</label>
-                <Typography variant="body2" color="initial" >{selectedRowData.position.wing.wing_name}</Typography>
+                <TextField id="" label="" defaultValue={selectedRowData.position.wing.wing_name} disabled={!edit} />
               </Box>
               <Box className="dataView">
                 <label name="name">Sub Wing:</label>
-                <Typography variant="body2" color="initial" >{selectedRowData.position.sub_wing.sub_wing_name}</Typography>
+                <TextField id="" label="" defaultValue={selectedRowData.position.sub_wing.sub_wing_name} disabled={!edit} />
               </Box>
             </Grid>
-
           </Grid>
         )}
       </Dialog>

@@ -129,30 +129,37 @@ const Theme = createTheme({
         },
     },
     components: {
-        // Inputs
         MuiTextField: {
             styleOverrides: {
                 root: {
                     "& .MuiInputBase-input": {
-                        padding: "0.35rem",
-                        border: "1ox solid #379237",
-                        fontSize: "0.85rem",
+                        padding: "0.2rem",
+                        border: "1px solid #5B5B5B",
+                        borderRadius: "0.3rem",
+                        fontSize: "12px",
                     },
                     "& .MuiOutlinedInput-root": {
                         borderRadius: "0.3rem",
                         "&:hover fieldset": {
                             border: "1px solid #379237",
+                            borderRadius: "0.3rem",
                         },
                         "&.Mui-focused fieldset": {
                             border: "1px solid #379237",
+                            borderRadius: "0.3rem",
                         },
                     },
                     width: '100%',
-                    height: "15px"
+                    height: "20px",
+                },
+                disabled: { // Style for disabled state
+                    "& .MuiOutlinedInput-root": { // Change to .MuiOutlinedInput-root
+                        border: "1px solid #fff",
+                        color: "#000",
+                    },
                 },
             },
         },
-
         // Buttons
         MuiButton: {
             styleOverrides: {
