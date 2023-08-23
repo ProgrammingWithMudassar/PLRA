@@ -1,18 +1,9 @@
-import React from "react";
-import "../../Styles.css";
-import { Typography, Box, Container } from "@mui/material";
+import React from 'react'
 
 const Skills = () => {
   return (
-    <>
-      <Box className="sectionTitle">
-        <Typography variant="h5" color="initial">
-          Skills
-        </Typography>
-      </Box>
-      <Container maxWidth="lg"></Container>
-    </>
-  );
-};
+    <div>Skills</div>
+  )
+}
 
-export default Skills;
+export default Skills

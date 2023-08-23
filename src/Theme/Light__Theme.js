@@ -94,7 +94,7 @@ const Theme = createTheme({
             fontSize: "1.2rem",
             lineHeight: 1.334,
             letterSpacing: "0em",
-            color:"#201F1E"
+            color: "#201F1E"
         },
         h6: {
             fontWeight: '500',
@@ -122,10 +122,10 @@ const Theme = createTheme({
         },
         body2: {
             fontWeight: '400',
-            fontSize: "14px",
+            fontSize: "12px",
             lineHeight: 1.43,
             letterSpacing: "0.01071em",
-            color:"#201F1E"
+            color: "#201F1E"
         },
     },
     components: {
@@ -141,26 +141,15 @@ const Theme = createTheme({
                     "& .MuiOutlinedInput-root": {
                         borderRadius: "0.3rem",
                         "&:hover fieldset": {
-                            border: "1ox solid #379237"
+                            border: "1px solid #379237",
                         },
                         "&.Mui-focused fieldset": {
-                            border: "1ox solid #379237"
+                            border: "1px solid #379237",
                         },
                     },
-                    '& input[type="date"]::-webkit-calendar-picker-indicator': {
-                        // Customize the appearance of the date picker icon here
-                        filter: 'invert(0.5)', // Example: Change icon color using filter
-                        // ... Other custom styles ...
-                      },
-                   
                     width: '100%',
-                    height: "33px"
+                    height: "15px"
                 },
-                // DateRangePicker: {
-                //     icon: {
-                //       color: "red", 
-                //     },
-                // },
             },
         },
 
@@ -171,7 +160,7 @@ const Theme = createTheme({
                     padding: "0.3rem 0rem",
                     border: "none",
                     borderRadius: 30,
-                    fontSize: 16,
+                    fontSize: 22,
                     cursor: "pointer",
                     textTransform: 'none',
                     transition: "background-color 0.3s",
@@ -210,7 +199,8 @@ const Theme = createTheme({
                     color: "#495057",
                     fontSize: "0.85rem",
                     marginTop: "-0.5rem",
-                    fontFamily:font,
+                    fontFamily: font,
+                    color: "#201F1E"
                 },
             },
         },
@@ -244,7 +234,7 @@ const Theme = createTheme({
                     border: '1px solid #379237',
                     borderRadius: '6px',
                     backgroundColor: "#F9F8F7",
-                    color:"#201F1E",
+                    color: "#201F1E",
                     "& .MuiDataGrid-columnHeaders": {
                         backgroundColor: "#379237",
                         color: "#FFFFFF",
@@ -285,7 +275,7 @@ const Theme = createTheme({
                 root: {
                     // boxShadow: "0px 0px 19px 9px rgba(231, 231, 231, 0.7)",
                     borderRadius: '8px',
-                    backgroundColor:"#F9F8F7"
+                    backgroundColor: "#F9F8F7"
                 },
             },
         },
@@ -305,9 +295,9 @@ const Theme = createTheme({
         //Drawar
         MuiDrawer: {
             styleOverrides: {
-              paper: {
-                backgroundColor: "#F3F2F1", // Set your desired background color here
-              },
+                paper: {
+                    backgroundColor: "#F3F2F1", // Set your desired background color here
+                },
             },
         },
 
@@ -315,17 +305,17 @@ const Theme = createTheme({
         MuiTab: {
             styleOverrides: {
                 root: {
-                    color:"#201F1E",
+                    color: "#201F1E",
                     fontSize: "13px",
                     textTransform: 'none',
-                    fontWeight:600
+                    fontWeight: 600
                 },
             },
         },
         MuiTabList: {
             styleOverrides: {
                 root: {
-                    color:"#201F1E",
+                    color: "#201F1E",
                     maxHeight: "20px"
                 },
             },

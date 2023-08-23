@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import "../../../Styles.css"
 import {
   Card, CardContent, MenuItem, TextField,
-   Box, Button, Grid, InputLabel, Select,
+  Box, Button, Grid, InputLabel, Select,
 } from "@mui/material";
 import Breadcrumb from '../../../../Components/Common/BreadCrumb.jsx';
 import { rows } from '../../../../Data/Dummy_Data/Dummy__Data.js'
@@ -10,6 +10,18 @@ import { useTheme } from '@mui/material/styles';
 import { useParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark, faPenToSquare, faFloppyDisk } from '../../../../Assets/Icons/Icons.js';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+import Slide from '@mui/material/Slide';
+import '../../../Styles.css'
+
+
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="top" ref={ref} {...props} />;
+});
 
 
 
@@ -75,11 +87,31 @@ const AddEmployee = () => {
           plus: "/employee/personal_information",
         }}
       />
-      <Box component={Card} sx={{ mt: 1}}>
+      <Box component={Card} sx={{ mt: 1 }}>
         <CardContent>
-          <Box sx={{ textAlign:'right'}}>
-            <Button><FontAwesomeIcon icon={faFloppyDisk} /></Button>
+          <Box sx={{ textAlign: 'right' }}>
+            <Button onClick={handleClickOpen}><FontAwesomeIcon icon={faFloppyDisk} /></Button>
           </Box>
+          <Dialog
+            open={open}
+            TransitionComponent={Transition}
+            keepMounted
+            onClose={handleClose}
+            aria-describedby="alert-dialog-slide-description"
+            PaperProps={{
+              style: {
+                position: 'absolute', top: '45%', left: '48%', width: "500px",
+                transform: 'translate(-50%, -50%)', color: 'black', padding: "10px 0 10px 10px",
+              }
+            }}
+          >
+            <DialogTitle>{"Employee Basic Information"}</DialogTitle>
+            <DialogContent>
+              <DialogContentText id="alert-dialog-slide-description">
+                Employe Basic Information Updated Successfully.
+              </DialogContentText>
+            </DialogContent>
+          </Dialog>
           <form>
             <Grid container spacing={2} >
               <Grid item xs={12} md={4} >
@@ -112,7 +144,7 @@ const AddEmployee = () => {
               </Grid>
               <Grid item md={4}>
                 <InputLabel htmlFor="J_date">Joining Date<span style={{ color: "red" }}>*</span></InputLabel>
-                <TextField type='date' id="J_date" variant="outlined" fullWidth />
+                <TextField type='date' id="J_date" variant="outlined" fullWidth/>
               </Grid>
               <Grid item md={4}>
                 <InputLabel htmlFor="groups">Groups<span style={{ color: "red" }}>*</span></InputLabel>
@@ -185,10 +217,17 @@ const AddEmployee = () => {
                   type="file"
                   id="backImage"
                   name="backImage"
+                  className="custom"
+                  sx={{ display: 'none' }}
                   onChange={(event) => {
                     handleFileChange(event, 'backImage');
-                  }}
-                />
+                  }}></TextField>
+                <Button className="custom-file-button"
+                  onChange={(event) => {
+                    handleFileChange(event, 'backImage');
+                  }}>
+                  Add File
+                </Button>
                 <div className='Image_Upload_Box'>
                   {uploadedBackImage && <img src={uploadedBackImage} alt="Back Uploaded" className='Upload_Image' />}
                   {!uploadedBackImage && <p className='file_box_css'>No File Chosen</p>}

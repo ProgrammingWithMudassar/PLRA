@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import "../../Styles.css"
 import {
-  Typography, Box, Button, Grid
+  Typography, Box, Button, Grid, TextField
 } from "@mui/material";
 import Breadcrumb from '../../../Components/Common/BreadCrumb.jsx';
 import { MyTableContainer } from '../../../Components/index.js';
@@ -14,6 +14,7 @@ import Drawar_Tabbar from '../Drawar_Tabbar';
 import avartar from '../../../Assets/png/avatar.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark, faPenToSquare, faPlus } from '../../../Assets/Icons/Icons.js';
+import Tooltip from '@mui/material/Tooltip';
 import "../../Styles.css"
 
 const renderNullInRed = (params) => {
@@ -71,7 +72,7 @@ const Basic__Information = () => {
       <Breadcrumb
         title="Employee"
         breadcrumbItem="Employee / Basic Information"
-        buttons={["plus"]}
+        buttons={["New"]}
         routes={{
           plus: "/employee/personal_information",
         }}
@@ -81,7 +82,7 @@ const Basic__Information = () => {
         data={rows}
         tableHeading="Employee"
         isAddNewButton={true}
-        customPageSize={30}
+        customPageSize={17}
         route={'/employee/basic_information/AddEmployee'}
       />
 
@@ -109,123 +110,100 @@ const Basic__Information = () => {
             </Grid>
 
             <Drawar_Tabbar />
-            <Grid item xs={12} mt={-5} sx={{ display:"flex", justifyContent:"flex-end"}} >
+            <Grid item xs={12} mt={-5} sx={{ display: "flex", justifyContent: "flex-end" }} >
               <Link to="/employee/basic_information/AddEmployee">
-              <Button sx={{ mt:-3}}>
-                <FontAwesomeIcon icon={faPlus} />
-              </Button>
+                <Tooltip title="Edit">
+                  <Button sx={{ mt: -3 }}>
+                    <FontAwesomeIcon icon={faPenToSquare} />
+                  </Button>
+                </Tooltip>
               </Link>
             </Grid>
-            <Grid item xs={12} md={2} mt={-6} sx={{ height: '100%', display: 'flex', alignItems: 'center' }}>
+            <Grid item xs={12} md={3} mt={-6} sx={{ height: '100%', display: 'flex', alignItems: 'center' }}>
               <Box className="Basic_Profile_Img" sx={{ mb: 4, objectFit: 'contain', overflow: 'hidden' }}>
                 <img src={avartar} alt="" width={200} />
               </Box>
             </Grid>
 
-            <Grid item xs={12} md={3} mt={-6}>
+            <Grid item xs={12} md={4} mt={-6}>
               <Box className="dataView">
-                <label name="name">Name :</label>
-                <Typography variant="body2" color="initial" >{selectedRowData.first_name} {selectedRowData.last_name}</Typography>
+                <label name="name">Employee No :</label>
+                <TextField id="" label="" value={selectedRowData.employee_no} disabled/>
               </Box>
               <Box className="dataView">
-                <label name="name">CNIC :</label>
+                <label name="name">Name :</label>
+                <TextField id="" label="" defaultValue={selectedRowData.first_name}  />
+              </Box>
+              <Box className="dataView">
+                <label name="name">Father Name:</label>
+                <Typography variant="body2" color="initial" >{selectedRowData.father_name}</Typography>
+              </Box>
+              <Box className="dataView">
+                <label name="name">CNIC:</label>
                 <Typography variant="body2" color="initial" >{selectedRowData.cnic}</Typography>
               </Box>
               <Box className="dataView">
-                <label name="name">Father Name:</label>
-                <Typography variant="body2" color="initial" >{selectedRowData.father_name}</Typography>
-              </Box>
-              <Box className="dataView">
                 <label name="name">Phone Number:</label>
                 <Typography variant="body2" color="initial" >{selectedRowData.phoneNumber}</Typography>
               </Box>
               <Box className="dataView">
-                <label name="name">Rep Officer :</label>
+                <label name="name">Passport Number:</label>
+                <Typography variant="body2" color="initial" >{selectedRowData.passport_number}</Typography>
+              </Box>
+              <Box className="dataView">
+                <label name="name">Joining Date:</label>
+                <Typography variant="body2" color="initial" >{selectedRowData.date_of_joining}</Typography>
+              </Box>
+              <Box className="dataView">
+                <label name="name">Reporting Officer:</label>
                 <Typography variant="body2" color="initial" >{selectedRowData.reporting_officer}</Typography>
               </Box>
+              
+            </Grid>
+
+            <Grid item xs={12} md={4} mt={-6}>
               <Box className="dataView">
-                <label name="name">Father Name:</label>
-                <Typography variant="body2" color="initial" >{selectedRowData.father_name}</Typography>
+                <label name="name">Center Name:</label>
+                <Typography variant="body2" color="initial" >{selectedRowData.center.center_name}</Typography>
               </Box>
               <Box className="dataView">
-                <label name="name">Father Name:</label>
-                <Typography variant="body2" color="initial" >{selectedRowData.father_name}</Typography>
+                <label name="name">Region:</label>
+                <Typography variant="body2" color="initial" >{selectedRowData.center.region}</Typography>
               </Box>
               <Box className="dataView">
-                <label name="name">Phone Number:</label>
-                <Typography variant="body2" color="initial" >{selectedRowData.phoneNumber}</Typography>
+                <label name="name">Domicile District:</label>
+                <Typography variant="body2" color="initial" >{selectedRowData.domicile_district}</Typography>
+              </Box>
+              <Box className="dataView">
+                <label name="name">Service Duration:</label>
+                <Typography variant="body2" color="initial" >{selectedRowData.service_duration}</Typography>
+              </Box>
+              {/* <Box className="dataView">
+                <label name="name">Job:</label>
+                <Typography variant="body2" color="initial" >{selectedRowData.position.job.job_title}</Typography>
+              </Box> */}
+              <Box className="dataView">
+                <label name="name">Job Abbrivation:</label>
+                <Typography variant="body2" color="initial" >{selectedRowData.position.job_level.job_abbrivation}</Typography>
+              </Box>
+              <Box className="dataView">
+                <label name="name">Position:</label>
+                <Typography variant="body2" color="initial" >{selectedRowData.position.position_id}</Typography>
+              </Box>
+              <Box className="dataView">
+                <label name="name">Position Type:</label>
+                <Typography variant="body2" color="initial" >{selectedRowData.position.position_type.position_type_name}</Typography>
+              </Box>
+              <Box className="dataView">
+                <label name="name">Wing:</label>
+                <Typography variant="body2" color="initial" >{selectedRowData.position.wing.wing_name}</Typography>
+              </Box>
+              <Box className="dataView">
+                <label name="name">Sub Wing:</label>
+                <Typography variant="body2" color="initial" >{selectedRowData.position.sub_wing.sub_wing_name}</Typography>
               </Box>
             </Grid>
 
-            <Grid item xs={12} md={3} mt={-6}>
-              <Box className="dataView">
-                <label name="name">Father Name:</label>
-                <Typography variant="body2" color="initial" >{selectedRowData.father_name}</Typography>
-              </Box>
-              <Box className="dataView">
-                <label name="name">Phone Number:</label>
-                <Typography variant="body2" color="initial" >{selectedRowData.phoneNumber}</Typography>
-              </Box>
-              <Box className="dataView">
-                <label name="name">Rep Officer :</label>
-                <Typography variant="body2" color="initial" >{selectedRowData.reporting_officer}</Typography>
-              </Box>
-              <Box className="dataView">
-                <label name="name">Father Name:</label>
-                <Typography variant="body2" color="initial" >{selectedRowData.father_name}</Typography>
-              </Box>
-              <Box className="dataView">
-                <label name="name">Father Name:</label>
-                <Typography variant="body2" color="initial" >{selectedRowData.father_name}</Typography>
-              </Box>
-              <Box className="dataView">
-                <label name="name">Phone Number:</label>
-                <Typography variant="body2" color="initial" >{selectedRowData.phoneNumber}</Typography>
-              </Box>
-              <Box className="dataView">
-                <label name="name">Rep Officer :</label>
-                <Typography variant="body2" color="initial" >{selectedRowData.reporting_officer}</Typography>
-              </Box>
-              <Box className="dataView">
-                <label name="name">Father Name:</label>
-                <Typography variant="body2" color="initial" >{selectedRowData.father_name}</Typography>
-              </Box>
-            </Grid>
-
-            <Grid item xs={12} md={3} mt={-6}>
-              <Box className="dataView">
-                <label name="name">Father Name:</label>
-                <Typography variant="body2" color="initial" >{selectedRowData.father_name}</Typography>
-              </Box>
-              <Box className="dataView">
-                <label name="name">Phone Number:</label>
-                <Typography variant="body2" color="initial" >{selectedRowData.phoneNumber}</Typography>
-              </Box>
-              <Box className="dataView">
-                <label name="name">Rep Officer :</label>
-                <Typography variant="body2" color="initial" >{selectedRowData.reporting_officer}</Typography>
-              </Box>
-              <Box className="dataView">
-                <label name="name">Father Name:</label>
-                <Typography variant="body2" color="initial" >{selectedRowData.father_name}</Typography>
-              </Box>
-              <Box className="dataView">
-                <label name="name">Father Name:</label>
-                <Typography variant="body2" color="initial" >{selectedRowData.father_name}</Typography>
-              </Box>
-              <Box className="dataView">
-                <label name="name">Phone Number:</label>
-                <Typography variant="body2" color="initial" >{selectedRowData.phoneNumber}</Typography>
-              </Box>
-              <Box className="dataView">
-                <label name="name">Rep Officer :</label>
-                <Typography variant="body2" color="initial" >{selectedRowData.reporting_officer}</Typography>
-              </Box>
-              <Box className="dataView">
-                <label name="name">Father Name:</label>
-                <Typography variant="body2" color="initial" >{selectedRowData.father_name}</Typography>
-              </Box>
-            </Grid>
           </Grid>
         )}
       </Dialog>

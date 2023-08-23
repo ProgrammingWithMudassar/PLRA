@@ -4,6 +4,15 @@
     margin-bottom: 20px;
 }
 
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(20%) sepia(92%) saturate(7459%) hue-rotate(85deg) brightness(91%) contrast(83%);
+    opacity: 1;
+    width: 16px;
+    height: 16px;
+    background: url(../Assets/Svg/Calender.svg) center/cover no-repeat;
+    cursor: pointer;
+}
+
 .InOneLine {
     display: flex;
     flex-direction: row;
@@ -49,11 +58,11 @@
 
 .input_box label {
     width: 30%;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 label {
-    font-size: 15px;
+    font-size: 12px;
     font-weight: 600;
 }
 
@@ -81,7 +90,7 @@ label {
 
 .Basic_Profile_Img {
     width: 12rem;
-    height: 10.2rem;
+    height: 12rem;
     background-color: var(--light-gray);
     border-radius: 50%;
     box-shadow: 0px 0px 10px 2px #dcdcdc;
@@ -126,5 +135,25 @@ label {
 
 .dataView label {
     display: inline-block;
-    width: 140px;
+    width: 180px;
+}
+
+.custom-file-container {
+    position: relative;
+    display: inline-block;
+}
+
+.custom-file-button {
+    background: #1976d2;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.custom-file-button:hover {
+    background: #1565c0;
 }
