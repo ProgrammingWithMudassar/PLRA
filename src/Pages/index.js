@@ -4,9 +4,7 @@ export { default as Dashboard } from './Dasboard/Dashboard.jsx';
 
 
 // Employee (index.js)
-export { default as Employee } from "./Employee/Employee.jsx";
-export { default as Basic__Information } from "./Employee/Basic_Information/Basic__Information.jsx";
-export { default as AddEmployee} from './Employee/Basic_Information/Add_Employee/AddEmployee.jsx'
+export { default as Employee } from "./Employee/Basic_Information/Employee.jsx";
 export { default as Personal__Information } from "./Employee/Personal_Information/Personal__Information.jsx";
 export { default as Address } from "./Employee/Address/Address.jsx";
 export { default as Contact__Information } from "./Employee/Contact_Information/Contact__Information.jsx";
