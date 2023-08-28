@@ -86,7 +86,6 @@ const Employee = () => {
 
   return (
     <>
-    <TabBar />
       <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <Breadcrumb title="Employee" breadcrumbItem="Employee / Basic Information" />
         <Tooltip title="New">

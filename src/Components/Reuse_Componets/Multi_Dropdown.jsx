@@ -1,10 +1,12 @@
 import React from 'react';
 import {
-  Dialog, DialogContent, Paper, Table, Button,
-  TableContainer, TableHead, TableRow, TableCell, TableBody, Tooltip,
+  Dialog, DialogContent, Paper, Table, Tooltip,
+  TableContainer, TableHead, TableRow, TableCell, TableBody, Button, 
 } from '@mui/material';
-import { Link } from 'react-router-dom'
 import { useTheme } from '@mui/material/styles';
+import { Link } from 'react-router-dom'
+
+
 
 
 const Multi_Dropdown = ({ open, onClose, centers, onSelect, columns, newLink }) => {
@@ -14,7 +16,7 @@ const Multi_Dropdown = ({ open, onClose, centers, onSelect, columns, newLink }) 
     <Dialog open={open} onClose={onClose} sx={{ width: "50%", m: 'auto' }}>
       <DialogContent>
         <Tooltip title="New">
-          <Link to={newLink}><Button>New</Button></Link>
+          <Link to='/'><Button>add new</Button></Link>
         </Tooltip>
         <TableContainer component={Paper}>
           <Table>
