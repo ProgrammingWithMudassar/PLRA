@@ -1,12 +1,52 @@
 import React, { useState } from 'react'
 import { Grid, Box, Typography, TextField, Tooltip, Button } from '@mui/material'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPenToSquare, faFloppyDisk } from '../../../../Assets/Icons/Icons.js';
-import { rows } from '../../../../Data/Dummy_Data/Dummy__Data.js'
+import { Multi_Dropdown } from '../../../../Components/index.js'
+import { faFloppyDisk } from '../../../../Assets/Icons/Icons.js';
 import avartar from '../../../../Assets/png/avatar.jpg';
 import '../../../Styles.css'
 
 const New_Emp_Basic_info = (props) => {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+
+  const centers = [
+    {
+      c_rec_id: 1,
+      center_id: "center_1",
+      center_name: "RWP CENTER",
+      la_mapping: "",
+      rr_mapping: "",
+      region: "North",
+      division: "Punjab",
+      district: "Rawalpindi",
+      tehsil: "Rawalpindi",
+    },
+    {
+      c_rec_id: 2,
+      center_id: "center_2",
+      center_name: "LHR CENTER",
+      la_mapping: "",
+      rr_mapping: "",
+      region: "North",
+      division: "Punjab",
+      district: "Lahore",
+      tehsil: "Lahore",
+    },
+    // Add more center objects...
+  ];
+
+  const openDialog = () => {
+    setIsDialogOpen(true);
+  };
+
+  const closeDialog = () => {
+    setIsDialogOpen(false);
+  };
+
+  const handleSelect = (centerName) => {
+    setSelectedCenterName(centerName);
+    closeDialog();
+  };
 
 
 
@@ -14,9 +54,9 @@ const New_Emp_Basic_info = (props) => {
     <div>
       <Grid container spacing={8}>
         <Grid item xs={12} mb={-6} mt={2} sx={{ display: "flex", justifyContent: "flex-end" }} >
-          <Tooltip title="Edit">
-            <Button sx={{ mt: -3 }} onClick={handleEdit}>
-              <FontAwesomeIcon icon={faPenToSquare} />
+          <Tooltip title="Save">
+            <Button sx={{ mt: -3 }} >
+              <FontAwesomeIcon icon={faFloppyDisk} />
             </Button>
           </Tooltip>
         </Grid>
@@ -68,12 +108,10 @@ const New_Emp_Basic_info = (props) => {
             <TextField id="" label="" />
           </Box>
         </Grid>
-
-
         <Grid item xs={12} md={4}>
           <Box className="dataView">
             <label name="name">Center Name:</label>
-            <TextField id="" label="" />
+            <TextField id="name" label=""  />
           </Box>
           <Box className="dataView">
             <label name="name">District:</label>
@@ -112,6 +150,7 @@ const New_Emp_Basic_info = (props) => {
             <TextField id="" label="" />
           </Box>
         </Grid>
+
       </Grid>
     </div >
   )
