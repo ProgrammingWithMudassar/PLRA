@@ -8,6 +8,7 @@ import '../../../Styles.css'
 
 const New_Emp_Basic_info = (props) => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [selectedCenterName, setSelectedCenterName] = useState('');
 
   const centers = [
     {
@@ -111,7 +112,8 @@ const New_Emp_Basic_info = (props) => {
         <Grid item xs={12} md={4}>
           <Box className="dataView">
             <label name="name">Center Name:</label>
-            <TextField id="name" label=""  />
+            <TextField id="name" label="" value={selectedCenterName  || ''} readOnly onClick={openDialog}/>
+            <Multi_Dropdown open={isDialogOpen} onClose={closeDialog} centers={centers} onSelect={handleSelect}  />
           </Box>
           <Box className="dataView">
             <label name="name">District:</label>
