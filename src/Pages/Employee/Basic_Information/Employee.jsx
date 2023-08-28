@@ -103,7 +103,6 @@ const Employee = () => {
         route={'/employee/basic_information/AddEmployee'}
       />
 
-
       {/* New Employee Dialog Box  */}
       <Dialog
         open={New_Emp_Form}
@@ -136,7 +135,7 @@ const Employee = () => {
                   <Tab label="Personal Information" value="2" />
                 </TabList>
               </Box>
-              <TabPanel value="1"><New_Emp_Basic_Emp  /></TabPanel>
+              <TabPanel value="1"><New_Emp_Basic_Emp /></TabPanel>
               <TabPanel value="2"><Personal_Info /></TabPanel>
             </TabContext>
           </Box>

@@ -134,23 +134,26 @@ const Theme = createTheme({
                 root: {
                     "& .MuiInputBase-input": {
                         padding: "0.2rem",
-                        border: "1px solid #5B5B5B",
-                        borderRadius: "0.3rem",
+                        paddingLeft: "0.67rem",
+                        borderRadius: "0.2rem",
                         fontSize: "12px",
+                        height: "13.5px",
                     },
                     "& .MuiOutlinedInput-root": {
-                        borderRadius: "0.3rem",
+                        padding: "0.2rem",
+                        borderRadius: "0.2rem",
                         "&:hover fieldset": {
+                            padding: "0.2rem",
                             border: "1px solid #379237",
-                            borderRadius: "0.3rem",
+                            borderRadius: "0.2rem",
                         },
                         "&.Mui-focused fieldset": {
+                            padding: "0.2rem",
                             border: "1px solid #379237",
-                            borderRadius: "0.3rem",
+                            borderRadius: "0.2rem",
                         },
                     },
                     width: '100%',
-                    height: "20px",
                 },
                 disabled: { // Style for disabled state
                     "& .MuiOutlinedInput-root": { // Change to .MuiOutlinedInput-root
@@ -216,10 +219,9 @@ const Theme = createTheme({
         MuiSelect: {
             styleOverrides: {
                 root: {
-                    padding: "0.3rem", width: "100%",
-                    border: "1ox solid #ced4da",
-                    fontSize: "0.85rem",
-                    height: "29.5px",
+                    width: "100%",
+                    fontSize: "12px",
+                    height: "26.5px",
                 },
             },
         },
@@ -334,7 +336,7 @@ const Theme = createTheme({
                 },
             },
         },
-        
+
     }
 });
 

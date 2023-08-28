@@ -16,7 +16,7 @@ const Multi_Dropdown = ({ open, onClose, centers, onSelect, columns, newLink }) 
     <Dialog open={open} onClose={onClose} sx={{ width: "50%", m: 'auto' }}>
       <DialogContent>
         <Tooltip title="New">
-          <Link to='/'><Button>add new</Button></Link>
+          <Link to={newLink}><Button>add new</Button></Link>
         </Tooltip>
         <TableContainer component={Paper}>
           <Table>

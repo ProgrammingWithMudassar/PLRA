@@ -19,3 +19,7 @@ export { default as Skills } from "./Employee/Skills/Skills.jsx";
 
 // New Records 
 export { default as New_Center } from './New_Records/New_Center.jsx'
+export { default as New_Region } from './New_Records/New_Region.jsx'
+export { default as New_Division } from './New_Records/New_Division.jsx'
+export { default as New_District } from './New_Records/New_District.jsx'
+export { default as New_Tehsil } from './New_Records/New_Tehsil.jsx'

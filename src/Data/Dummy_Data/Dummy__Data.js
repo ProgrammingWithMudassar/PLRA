@@ -85,13 +85,11 @@ export const rows = [
     date_of_joining: "4/2/2023",
     service_duration: "6 Months 4 Days",
     is_superuser: false,
-    "is_staff": true,
-    "is_active": true,
-    "is_superuser": false,
     reporting_officer: "Aneela Khan",
     counter_assigning_officer: " Ahmed Ali",
     groups: [1],
     user_permissions: [],
+    active:'Active'
   }, //2nd Object
   {
     id: 2,
@@ -166,13 +164,12 @@ export const rows = [
     employee_domicile_image: null,
     date_of_joining: "12/12/2001",
     service_duration: "22 Years 9 Months 3 Days",
-    "is_staff": true,
-    "is_active": true,
-    "is_superuser": false,
+    is_superuser: false,
     reporting_officer: "Hakim Nabi Sulehria",
     counter_assigning_officer: "Raja Ahmed Ali",
     groups: [1],
     user_permissions: [],
+    active:'Inactive'
   },
   //3rd Object
   {
@@ -248,13 +245,12 @@ export const rows = [
     employee_domicile_image: null,
     date_of_joining: "4/9/2021",
     service_duration: "2 Years 2 Months 4 Days",
-    "is_staff": true,
-    "is_active": true,
-    "is_superuser": false,
+    is_superuser: false,
     reporting_officer: "Hakim Nabi Sulehria",
     counter_assigning_officer: " Ahmed Ali",
     groups: [1],
     user_permissions: [],
+    active:'Active'
   },
   //4th Object
   {
@@ -314,6 +310,7 @@ export const rows = [
       no_of_position: 3,
       open_position: true,
       full_time_equivalent: "1.0",
+  
     },
     password: "abc444",
     last_login: null,
@@ -330,13 +327,12 @@ export const rows = [
     employee_domicile_image: null,
     date_of_joining: "4/9/2019",
     service_duration: "4 Years 2 Months 4 Days",
-    "is_staff": true,
-    "is_active": true,
-    "is_superuser": false,
+    is_superuser: false,
     reporting_officer: "Haseeb Nawaz",
     counter_assigning_officer: " Ali Akbar",
     groups: [1],
     user_permissions: [],
+    active:'Active'
   },
   //5th Object
   {
@@ -412,13 +408,12 @@ export const rows = [
     employee_domicile_image: null,
     date_of_joining: "4/2/2020",
     service_duration: "3 Years 8 Months 4 Days",
-    "is_staff": true,
-    "is_active": true,
-    "is_superuser": false,
+    is_superuser: false,
     reporting_officer: "Ai Nawaz",
     counter_assigning_officer: " Nawaz Akbar",
     groups: [1],
     user_permissions: [],
+    active:'Active'
   },
   //6th Object
   {
@@ -494,13 +489,12 @@ export const rows = [
     employee_domicile_image: null,
     date_of_joining: "4/2/2010",
     service_duration: "13 Years 8 Months 4 Days",
-    "is_staff": true,
-    "is_active": true,
-    "is_superuser": false,
+    is_superuser: false,
     reporting_officer: "Umer Khan",
     counter_assigning_officer: "Ehtisham Ali ",
     groups: [1],
     user_permissions: [],
+    active:'Active'
   },
   //7th Object
   {
@@ -576,13 +570,12 @@ export const rows = [
     employee_domicile_image: null,
     date_of_joining: "4/2/2022",
     service_duration: "1 Years 6 Months 4 Days",
-    "is_staff": true,
-    "is_active": true,
     is_superuser: false,
     reporting_officer: "Shahwaiz Ahmed",
     counter_assigning_officer: "Ghulam Mustafa ",
     groups: [1],
     user_permissions: [],
+    active:'Active'
   },
   //8th Object
   {
@@ -649,7 +642,7 @@ export const rows = [
     cnic: "37407-7396336-1",
     first_name: "Sarfaraz",
     last_name: "Bibi",
-    father_name: "Ehtisham Ali",
+    father_name: "Ghulam Ishaq",
     passport_number: "948786",
     domicile_district: "Islambad",
     phoneNumber: "+92 33379453",
@@ -658,13 +651,12 @@ export const rows = [
     employee_domicile_image: null,
     date_of_joining: "4/2/2021",
     service_duration: "2 Years 6 Months 4 Days",
-    "is_staff": true,
-    "is_active": true,
     is_superuser: false,
     reporting_officer: "Ahmed Ali",
     counter_assigning_officer: "Abdullah Nazar ",
     groups: [1],
     user_permissions: [],
+    active:'Active'
   },
   //9th Object
   {
@@ -740,13 +732,12 @@ export const rows = [
     employee_domicile_image: null,
     date_of_joining: "4/2/2021",
     service_duration: "2 Years 6 Months 4 Days",
-    "is_staff": true,
-    "is_active": true,
     is_superuser: false,
     reporting_officer: "Mudassir Hussain",
     counter_assigning_officer: "Ahmed Ali ",
     groups: [1],
     user_permissions: [],
+    active:'Active'
   },
   //10th Object
   {
@@ -822,13 +813,12 @@ export const rows = [
     employee_domicile_image: null,
     date_of_joining: "1/2/2020",
     service_duration: "3 Years 6 Months 7 Days",
-    "is_staff": true,
-    "is_active": true,
     is_superuser: false,
     reporting_officer: "Zohaib Ahmed",
     counter_assigning_officer: "Muhammad Saqib",
     groups: [1],
     user_permissions: [],
+    active:'Active'
   },
   //11th Object
   {
@@ -904,13 +894,12 @@ export const rows = [
     employee_domicile_image: null,
     date_of_joining: "1/2/2018",
     service_duration: "5 Years 6 Months 7 Days",
-    "is_staff": true,
-    "is_active": true,
     is_superuser: false,
     reporting_officer: "Awais Aslam",
     counter_assigning_officer: "Muhammad Sabir",
     groups: [1],
     user_permissions: [],
+    active:'Active'
   },
   //12th Object
   {
@@ -986,13 +975,12 @@ export const rows = [
     employee_domicile_image: null,
     date_of_joining: "1/2/2019",
     service_duration: "4 Years 6 Months 7 Days",
-    "is_staff": true,
-    "is_active": true,
     is_superuser: false,
     reporting_officer: "Ikram Masood",
     counter_assigning_officer: "Arslan Sabir",
     groups: [1],
     user_permissions: [],
+    active:'Active'
   },
   //13th Object
   {
@@ -1068,13 +1056,12 @@ export const rows = [
     employee_domicile_image: null,
     date_of_joining: "1/2/2017",
     service_duration: "6 Years 6 Months 7 Days",
-    "is_staff": true,
-    "is_active": true,
     is_superuser: false,
     reporting_officer: "Muhammad Hassan ",
     counter_assigning_officer: "Muhammad Zeeshan",
     groups: [1],
     user_permissions: [],
+    active:'Active'
   },
   //14th Object
   {
@@ -1150,13 +1137,12 @@ export const rows = [
     employee_domicile_image: null,
     date_of_joining: "1/2/2020",
     service_duration: "3 Years 6 Months 7 Days",
-    "is_staff": true,
-    "is_active": true,
     is_superuser: false,
     reporting_officer: "Raheel Riaz ",
     counter_assigning_officer: "Ali Nawab",
     groups: [1],
     user_permissions: [],
+    active:'Active'
   },
   //15 Object
   {
@@ -1232,13 +1218,12 @@ export const rows = [
     employee_domicile_image: null,
     date_of_joining: "4/2/2022",
     service_duration: "1 Years 6 Months 4 Days",
-    "is_staff": true,
-    "is_active": true,
     is_superuser: false,
     reporting_officer: "Ahmed Nawaz",
     counter_assigning_officer: " Mustafa Qureshi",
     groups: [1],
     user_permissions: [],
+    active:'Active'
   },
   //16 Object
   {
@@ -1314,13 +1299,12 @@ export const rows = [
     employee_domicile_image: null,
     date_of_joining: "4/9/2019",
     service_duration: "4 Years 2 Months 4 Days",
-    "is_staff": true,
-    "is_active": true,
     is_superuser: false,
     reporting_officer: "Abdullah Shafique",
     counter_assigning_officer: " Ali Akbar",
     groups: [1],
     user_permissions: [],
+    active:'Active'
   },
   //17th Object
   {
@@ -1396,13 +1380,12 @@ export const rows = [
     employee_domicile_image: null,
     date_of_joining: "4/2/2021",
     service_duration: "2 Years 6 Months 4 Days",
-    "is_staff": true,
-    "is_active": true,
     is_superuser: false,
     reporting_officer: "Abdul Rehman",
     counter_assigning_officer: "Abdullah Nazar ",
     groups: [1],
     user_permissions: [],
+    active:'Active'
   },
   //18rd Object
   {
@@ -1478,13 +1461,12 @@ export const rows = [
     employee_domicile_image: null,
     date_of_joining: "4/9/2021",
     service_duration: "2 Years 2 Months 4 Days",
-    "is_staff": true,
-    "is_active": true,
     is_superuser: false,
     reporting_officer: "Zarqa Khan",
     counter_assigning_officer: " Haris Nawaz",
     groups: [1],
     user_permissions: [],
+    active:'Active'
   },
   //19th Object
   {
@@ -1560,13 +1542,12 @@ export const rows = [
     employee_domicile_image: null,
     date_of_joining: "1/2/2017",
     service_duration: "6 Years 6 Months 7 Days",
-    "is_staff": true,
-    "is_active": true,
     is_superuser: false,
     reporting_officer: "Muhammad Hassain ",
     counter_assigning_officer: "Zeeshan Tahir",
     groups: [1],
     user_permissions: [],
+    active:'Active'
   },
   //20th Object
   {
@@ -1642,13 +1623,12 @@ export const rows = [
     employee_domicile_image: null,
     date_of_joining: "4/2/2020",
     service_duration: "3 Years 8 Months 4 Days",
-    "is_staff": true,
-    "is_active": true,
     is_superuser: false,
     reporting_officer: "ALeem Nawaz",
     counter_assigning_officer: " Shoiab Akhtar",
     groups: [1],
     user_permissions: [],
+    active:'Active'
   }, //21 th Object
   {
     id: 21,
@@ -1723,13 +1703,12 @@ export const rows = [
     employee_domicile_image: null,
     date_of_joining: "4/2/2023",
     service_duration: "6 Months 4 Days",
-    "is_staff": true,
-    "is_active": true,
     is_superuser: false,
     reporting_officer: "Aleema Khan",
     counter_assigning_officer: " Ahmed Ali",
     groups: [1],
     user_permissions: [],
+    active:'Active'
   }, //22 Object
   {
     id: 22,
@@ -1804,13 +1783,12 @@ export const rows = [
     employee_domicile_image: null,
     date_of_joining: "4/9/2019",
     service_duration: "4 Years 2 Months 4 Days",
-    "is_staff": true,
-    "is_active": true,
     is_superuser: false,
     reporting_officer: "Umar Akmal ",
     counter_assigning_officer: " Arslan Ash",
     groups: [1],
     user_permissions: [],
+    active:'Active'
   },//23 Object
   {
     id: 23,
@@ -1885,18 +1863,18 @@ export const rows = [
     employee_domicile_image: null,
     date_of_joining: "4/2/2010",
     service_duration: "13 Years 8 Months 4 Days",
-    "is_staff": true,
-    "is_active": true,
     is_superuser: false,
     reporting_officer: "Umer Khan",
     counter_assigning_officer: "Ehtisham Ali ",
     groups: [1],
     user_permissions: [],
+    active:'Active'
   },
 ];
 
 export const PersonalInformation = [
   {
+    id:'1',
     p_i_id: 1,
     marital_status: "Single",
     no_of_dependents: 2,
@@ -1908,16 +1886,21 @@ export const PersonalInformation = [
     deceased_date: null,
     native_language: "Urdu",
     passport_number: "pk12345",
+    bank_account_no: 73873878747,
+    bank_name: "Habib Bank Limited",
     eobi_number: "EOBI-12345",
+    blood_group: "A-",
     weight: 60.0,
     height: 5.7,
     disability_note: "",
     date_of_superannutation: "2062-04-11",
-    employee: "Ahmed Ali",
+    employee: 1,
     nationality: "Pakistan",
-    birth_city: 1
+    birth_city: 1,
+    disablity_note: " ",
   },
   {
+    id:'2',
     p_i_id: 2,
     marital_status: "Married",
     no_of_dependents: 3,
@@ -1929,16 +1912,21 @@ export const PersonalInformation = [
     deceased_date: null,
     native_language: "english",
     passport_number: "pk12345",
+    bank_account_no: 6756575675,
+    bank_name: "Soneri Bank Limited",
     eobi_number: "EOBI-12345",
     weight: 60.0,
+    blood_group: "O-",
     height: 5.7,
     disability_note: "",
     date_of_superannutation: "2062-04-11",
-    employee: "Nawaz Ahmed",
+    employee: 2,
     nationality: "Pakistan",
-    birth_city: 1
+    birth_city: 1,
+    disablity_note: " ",
   },
   {
+    id:'3',
     p_i_id: 3,
     marital_status: "Married",
     no_of_dependents: 2,
@@ -1950,16 +1938,21 @@ export const PersonalInformation = [
     deceased_date: null,
     native_language: "english",
     passport_number: "pk12345",
+    bank_account_no: 455435345457,
+    bank_name: "United Bank Limited",
     eobi_number: "EOBI-12345",
     weight: 60.0,
+    blood_group: "A+",
     height: 5.7,
     disability_note: "",
     date_of_superannutation: "2062-04-11",
-    employee: "John Alem",
+    employee: 3,
     nationality: "USA",
-    birth_city: 1
+    birth_city: 1,
+    disablity_note: " ",
   },
   {
+    id:'4',
     p_i_id: 4,
     marital_status: "Single",
     no_of_dependents: 2,
@@ -1971,14 +1964,18 @@ export const PersonalInformation = [
     deceased_date: null,
     native_language: "english",
     passport_number: "pk12345",
+    bank_account_no: 127655545,
+    bank_name: "Faisal Bank",
     eobi_number: "EOBI-12345",
     weight: 60.0,
+    blood_group: "O-",
     height: 5.7,
     disability_note: "",
     date_of_superannutation: "2062-04-11",
-    employee: "Shahzain Khan",
+    employee: 4,
     nationality: "Pakistan",
-    birth_city: 1
+    birth_city: 1,
+    disablity_note: " ",
   },
 ];
 
@@ -2003,6 +2000,8 @@ export const Countries = [
 
 export const education = [
   {
+
+    id:'1',
     education_rec_id: 1,
     education: "BSSE",
     major_subject: "Computer Engineering",
@@ -2016,6 +2015,7 @@ export const education = [
     institution_country: "Pakistan",
   },
   {
+    id:'2',
     education_rec_id: 2,
     education: "BSCS",
     major_subject: "Computer Science",
@@ -2029,6 +2029,7 @@ export const education = [
     institution_country: "Pakistan",
   },
   {
+    id:'3',
     education_rec_id: 3,
     education: "BBA",
     major_subject: "Business Education",
@@ -2042,6 +2043,7 @@ export const education = [
     institution_country: 1,
   },
   {
+    id:'4',
     education_rec_id: 4,
     education: "MBA",
     major_subject: "Master in Business Education",
@@ -2058,6 +2060,7 @@ export const education = [
 
 export const training = [
   {
+    id:'1',
     training_rec_id: 1,
     training_topic: "HTML",
     training_nature: "Medium",
@@ -2067,8 +2070,12 @@ export const training = [
     score_required_to_pass: "10",
     obtained_score: "12",
     remarks: "Excellent",
+
+    employee:1
+    
   },
   {
+    id:'2',
     training_rec_id: 2,
     training_topic: "React",
     training_nature: "Hard",
@@ -2078,8 +2085,10 @@ export const training = [
     score_required_to_pass: "15",
     obtained_score: "18",
     remarks: "Excellent",
+    employee:2
   },
   {
+    id:'3',
     training_rec_id: 3,
     training_topic: "Node",
     training_nature: "Hard",
@@ -2089,8 +2098,10 @@ export const training = [
     score_required_to_pass: "15",
     obtained_score: "13",
     remarks: "Not Enough",
+    employee:3
   },
   {
+    id:'4',
     training_rec_id: 4,
     training_topic: "CSS",
     training_nature: "Medium",
@@ -2100,51 +2111,62 @@ export const training = [
     score_required_to_pass: "10",
     obtained_score: "13",
     remarks: "Excellent",
+    employee:4
   },
 ];
 
 export const skill = [
   {
+
+    id:'1',
     skill_rec_id: 1,
     skill: "Front End Designer",
     skill_date: "2022-02-15",
     years_of_experience: 3,
-    verified: true,
+    verified:' true',
     verified_by: "Hakim Nabi",
     level_of_skill: 2,
+    employee:1
   },
   {
+    id:'2',
     skill_rec_id: 2,
     skill: "Back End Designer",
     skill_date: "2021-02-10",
     years_of_experience: 3,
-    verified: true,
+    verified: 'true',
     verified_by: "Babar Azam",
     level_of_skill: 2,
+    employee:2
   },
   {
+    id:'3',
     skill_rec_id: 3,
     skill: "Software Designer",
     skill_date: "2021-02-10",
     years_of_experience: 3,
-    verified: true,
+    verified: 'true',
     verified_by: "Ahmed Ali",
     level_of_skill: 2,
+    employee:3
   },
   {
+    id:'4',
     skill_rec_id: 4,
     skill: "UI/UX",
     skill_date: "2023-04-10",
     years_of_experience: 3,
-    verified: true,
+    verified: 'true',
     verified_by: "Shahwaiz Ahmed",
     level_of_skill: 1,
+    employee:4
   },
 ];
-
 export const personalDocument = [
   {
+    id:'1',
     personal_document_rec_id: 1,
+    employee: 1,
     document_type: "PDF",
     document_name: "Domicile",
     issuance_authority: "Ahmed Ali",
@@ -2156,7 +2178,9 @@ export const personalDocument = [
     attachment: "/Tmrc_domc_2023.pdf",
   },
   {
+    id:'2',
     personal_document_rec_id: 2,
+    employee: 2,
     document_type: "PNG",
     document_name: "CNIC",
     issuance_authority: "Azam Khan",
@@ -2168,7 +2192,9 @@ export const personalDocument = [
     attachment: "/_cnic_2023.PNG",
   },
   {
+    id:'3',
     personal_document_rec_id: 3,
+    employee: 3,
     document_type: "JPG",
     document_name: "Profile Image",
     issuance_authority: "Amir Sohail",
@@ -2180,7 +2206,9 @@ export const personalDocument = [
     attachment: "/_profile_2023.JPG",
   },
   {
+    id:'4',
     personal_document_rec_id: 4,
+    employee: 4,
     document_type: "doc",
     document_name: "Records",
     issuance_authority: "Abdullah Nazar",
@@ -2192,144 +2220,212 @@ export const personalDocument = [
     attachment: "/_profile_2023.doc",
   },
 ];
+export const address = [
+  {
+    id:'1',
+    e_a_rec_id: 1,
+    name: "Home Address",
+    address: "123 Main Street",
+    purpose: "Home",
+    is_primary: 'true',
+    district: "Punjab",
+    tehsil: "Lahore",
+    city: "Lahore",
+    employee:1
+  },
+  {
+    id:'2',
+    e_a_rec_id: 2,
+    name: "Office Address",
+    address: "456 Business Avenue",
+    purpose: "Work",
+    is_primary: 'false',
+    district: "Punjab",
+    tehsil: "Sialkot",
+    city: "Sialkot",
+    employee:2
+  },
+  {
+    id:'3',
+    e_a_rec_id: 3,
+    name: "Vacation Home",
+    address: "789 Beachside Drive",
+    purpose: "Recreation",
+    is_primary: 'false',
+    district: "Punjab",
+    tehsil: "Faisalabad",
+    city: "Faisalabad",
+    employee:3
+  },
+  {
+    id:'4',
+    e_a_rec_id: 4,
+    name: "Friend's Address",
+    address: "987 Elm Street",
+    purpose: "Social",
+    is_primary: 'true',
+    district: 'Rawalpindi',
+    tehsil: 'Rawalpindi',
+    city: 'Rawalpindi',
+    employee:4
+  },
+];
 
 export const familyInformation = [
   {
+    id:'1',
     family_rec_id: 1,
     full_name: "Malik Habib",
     birth_Date: "2023-08-17",
     relation: "sibling",
-    is_dependent: true,
+    is_dependent: 'true',
     employee: "Ahmed Ali ",
   },
   {
+    id:'2',
     family_rec_id: 2,
     full_name: "Malik Abdullah",
     birth_Date: "2023-08-17",
     relation: "sibling",
-    is_dependent: true,
+    is_dependent: 'true',
     employee: "Hakim Nabi",
   },
   {
+    id:'3',
     family_rec_id: 3,
     full_name: "Malik Ahmed",
     birth_Date: "2023-08-17",
     relation: "sibling",
-    is_dependent: true,
+    is_dependent: 'true',
     employee: "Mudassir Hussain",
   },
   {
+    id:'4',
     family_rec_id: 4,
     full_name: "Malik Hakim",
     birth_Date: "2023-08-17",
     relation: "sibling",
-    is_dependent: true,
+    is_dependent: 'true',
     employee: "Zarqa Shehwar",
   },
 ];
 
 export const employeeReference =
-  [
-    {
-      emp_ref_rec_id: 1,
-      referance_name: "Hakim Nabi",
-      relation: "Co-Worker",
-      company_name: "Shehwar Group of Company",
-      Designation: "Deputy Manager",
-      years_known: 5,
-      phoneNumber: +923105535816,
-      company_address: "I/8 Islamabad Pakistan",
-      employee: "Zarqa Shehwar",
-    },
-    {
-      emp_ref_rec_id: 2,
-      referance_name: "Zarqa Shehwar",
-      relation: "Team Lead",
-      company_name: "TMRC",
-      Designation: "Assistant Manager",
-      years_known: 15,
-      phoneNumber: +923105535816,
-      company_address: "H/9 Islamabad ",
-      employee: "Mudassir Hussain",
-    },
-    {
-      emp_ref_rec_id: 3,
-      referance_name: "Malik Abdullah Nazar",
-      relation: "Leader",
-      company_name: "Shehwar Group of Compaies",
-      Designation: "Manager",
-      years_known: 3,
-      phoneNumber: +923105535816,
-      company_address: "Islamabad Pakistan",
-      employee: "Hakim Nabi",
-    },
-    {
-      emp_ref_rec_id: 4,
-      referance_name: "Ali Mirza",
-      relation: "Co-Worker",
-      company_name: "TMRAC",
-      Designation: "Team Lead",
-      years_known: 7,
-      phoneNumber: +923105535816,
-      company_address: "Rawalpindi Pakistan",
-      employee: "Ahmed Ali",
-    }
+[
+  {
+    id:'1',
+    emp_ref_rec_id: 1,
+    referance_name: "Hakim Nabi",
+    relation: "Co-Worker",
+    company_name: "Shehwar Group of Company",
+    Designation: "Deputy Manager",
+    years_known: 5,
+    phoneNumber: +923105535816,
+    company_address: "I/8 Islamabad Pakistan",
+    employee: "Zarqa Shehwar",
+  },
+  {
+    id:'2',
+    emp_ref_rec_id: 2,
+    referance_name: "Zarqa Shehwar",
+    relation: "Team Lead",
+    company_name: "TMRC",
+    Designation: "Assistant Manager",
+    years_known: 15,
+    phoneNumber: +923105535816,
+    company_address: "H/9 Islamabad ",
+    employee: "Mudassir Hussain",
+  },
+  {
+    id:'3',
+    emp_ref_rec_id: 3,
+    referance_name: "Malik Abdullah Nazar",
+    relation: "Leader",
+    company_name: "Shehwar Group of Compaies",
+    Designation: "Manager",
+    years_known: 3,
+    phoneNumber: +923105535816,
+    company_address: "Islamabad Pakistan",
+    employee: "Hakim Nabi",
+  },
+  {
+    id:'4',
+    emp_ref_rec_id: 4,
+    referance_name: "Ali Mirza",
+    relation: "Co-Worker",
+    company_name: "TMRAC",
+    Designation: "Team Lead",
+    years_known: 7,
+    phoneNumber: +923105535816,
+    company_address: "Rawalpindi Pakistan",
+    employee: "Ahmed Ali",
+  }
 ];
 
 export const employeeHistory = [
-  {
+    
+    {
+      id:'1',
     d_e_h_rec_id: 1,
     organization_nam: "TMRC",
     position_held: "HR",
     employment_start_date: "2023-08-17",
     employment_end_date: "2023-08-17",
     leaving_reason: "NA",
+    NOC_From_Previous_Employment: null,
     organization_contact_number: +923175001831,
     organization_address: "I/8 TMRC RWP",
     government_job: true,
-    employee: 2,
+    employee: 1,
     job_district: 1,
   },
   {
+    id:'2',
     d_e_h_rec_id: 2,
     organization_name: "TMRAC",
     position_held: "Receptionist",
     employment_start_date: "2023-08-17",
     employment_end_date: "2023-08-17",
     leaving_reason: "NA",
+    NOC_From_Previous_Employment: null,
     organization_contact_number: "+923175001831",
     organization_address: "H/9 Sector 2 TMRC RWP",
     government_job: true,
-    employee: "Adil Younas",
+    employee: 2,
     job_district: "Rawalpindi",
   },
   {
+    id:'3',
     d_e_h_rec_id: 3,
     organization_name: "INCR",
     position_held: "Cashier",
     employment_start_date: "2023-08-17",
     employment_end_date: "2023-08-17",
     leaving_reason: "NA",
+    NOC_From_Previous_Employment: null,
     organization_contact_number: "+923175001831",
     organization_address: "I 8 TMRC RWP",
     government_job: false,
-    employee: "Shahwaiz Ahmed",
+    employee: 3,
     job_district: "Lahore",
   },
   {
+    id:'4',
     d_e_h_rec_id: 4,
     organization_name: "OSAF",
     position_held: "Accountant",
     employment_start_date: "2023-08-17",
     employment_end_date: "2023-08-17",
     leaving_reason: "NA",
+    NOC_From_Previous_Employment: null,
     organization_contact_number: "+923175001831",
     organization_address: "I/8 TMRC RWP",
     government_job: true,
-    employee: "Hakim Nabi",
+    employee: 4,
     job_district: "Lahore",
   },
 ];
+
 
 export const levelOfSkill = [
   {
@@ -2508,6 +2604,63 @@ export const center = [
     division: "Punjab",
     district: "Multan",
     tehsil: "Multan",
+  },
+];
+export const contactNumber = [
+  {
+    id:'1',
+    e_c_i_rec_id: 1,
+    purpose: "Home",
+    type: "Phone",
+    contact_no_address: "03175001831",
+    is_primary:' true',
+    employee:1
+  },
+  {
+    id:'2',
+    e_c_i_rec_id: 2,
+    purpose: "Home",
+    type: "Email-Address",
+    contact_no_address: "malikabdullah130037@gmail.com",
+    is_primary: 'false',
+    employee:2
+  },
+  {
+    id:'3',
+    e_c_i_rec_id: 3,
+    purpose: "Work",
+    type: "Phone",
+    contact_no_address: "04211223344",
+    is_primary: 'false',
+    employee:3
+  },
+  {
+    id:'4',
+    e_c_i_rec_id: 4,
+    purpose: "Emergency",
+    type: "Phone",
+    contact_no_address: "911",
+    is_primary: 'true',
+    employee:4
+  },
+  {
+    id:'5',
+    e_c_i_rec_id: 5,
+    purpose: "Work",
+    type: "Email-Address",
+    contact_no_address: "john.doe@company.com",
+    is_primary: 'false',
+    employee:5
+  },
+ 
+  {
+    id:'6',
+    e_c_i_rec_id: 6,
+    purpose: "Social",
+    type: "Phone",
+    contact_no_address: "07123456789",
+    is_primary:' true',
+    employee:6
   },
 ];
 

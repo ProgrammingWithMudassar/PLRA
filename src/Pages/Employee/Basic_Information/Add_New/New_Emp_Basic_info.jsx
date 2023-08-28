@@ -66,7 +66,6 @@ const New_Emp_Basic_info = (props) => {
             </Button>
           </Tooltip>
         </Grid>
-
         <Grid item xs={12} md={3}>
           <Box className="Basic_Profile_Img" sx={{ mb: 4, objectFit: 'contain', overflow: 'hidden' }}>
             <img src={avartar} alt="" width={200} />
@@ -75,43 +74,43 @@ const New_Emp_Basic_info = (props) => {
         <Grid item xs={12} md={4} >
           <Box className="dataView">
             <label name="name">Employee No :</label>
-            <TextField id="" label="" />
+            <TextField />
           </Box>
           <Box className="dataView">
             <label name="name">Title :</label>
-            <TextField id="" label="" />
+            <TextField />
           </Box>
           <Box className="dataView">
             <label name="name">Name :</label>
-            <TextField id="" label="" />
+            <TextField />
           </Box>
           <Box className="dataView">
             <label name="name">Father Name:</label>
-            <TextField id="" label="" />
+            <TextField />
           </Box>
           <Box className="dataView">
             <label name="name">CNIC:</label>
-            <TextField id="" label="" />
+            <TextField />
           </Box>
           <Box className="dataView">
             <label name="name">Phone Number:</label>
-            <TextField id="" label="" />
+            <TextField />
           </Box>
           <Box className="dataView">
             <label name="name">Passport Number:</label>
-            <TextField id="" label="" />
+            <TextField />
           </Box>
           <Box className="dataView">
             <label name="name">Joining Date:</label>
-            <TextField id="" label="" />
+            <TextField />
           </Box>
           <Box className="dataView">
             <label name="name">Reporting Officer:</label>
-            <TextField id="" label="" />
+            <TextField />
           </Box>
           <Box className="dataView">
             <label name="name">Assigning Officer:</label>
-            <TextField id="" label="" />
+            <TextField />
           </Box>
         </Grid>
         <Grid item xs={12} md={4}>
@@ -129,39 +128,39 @@ const New_Emp_Basic_info = (props) => {
           </Box>
           <Box className="dataView">
             <label name="name">District:</label>
-            <TextField id="" label="" />
+            <TextField />
           </Box>
           <Box className="dataView">
             <label name="name">Tehsil:</label>
-            <TextField id="" label="" />
+            <TextField />
           </Box>
           <Box className="dataView">
             <label name="name">Job :</label>
-            <TextField id="" label="" />
+            <TextField />
           </Box>
           <Box className="dataView">
             <label name="name">Job Level:</label>
-            <TextField id="" label="" />
+            <TextField />
           </Box>
           <Box className="dataView">
             <label name="name">Position:</label>
-            <TextField id="" label="" />
+            <TextField />
           </Box>
           <Box className="dataView">
             <label name="name">Position Type:</label>
-            <TextField id="" label="" />
+            <TextField />
           </Box>
           <Box className="dataView">
             <label name="name">PPG Level:</label>
-            <TextField id="" label="" />
+            <TextField />
           </Box>
           <Box className="dataView">
             <label name="name">Wing:</label>
-            <TextField id="" label="" />
+            <TextField />
           </Box>
           <Box className="dataView">
             <label name="name">Sub Wing:</label>
-            <TextField id="" label="" />
+            <TextField />
           </Box>
         </Grid>
 

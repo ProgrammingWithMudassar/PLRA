@@ -3,7 +3,7 @@ import {
     Login, Register, 
     Dashboard, Employee,  Personal__Information,
     Address, Contact__Information, Family__Information, Employment__History,
-    Personal__Document, References, Education, Training, Skills, New_Center,
+    Personal__Document, References, Education, Training, Skills, New_Center, New_Region, New_Division, New_District, New_Tehsil,
 } from "../Pages/index.js";
 
 // Public Routes
@@ -29,7 +29,14 @@ const privateRoutes = [
     { path: "/employee/education", component: Education },
     { path: "/employee/training", component: Training },
     { path: "/employee/skills", component: Skills },
-    { path: "/new_center", component: New_Center}
+
+    // Multi_Column DropDown 
+    { path: "/new_center", component: New_Center},
+    { path: "/new_region", component: New_Region},
+    { path: "/new_division", component: New_Division},
+    { path: "/new_district", component: New_District},
+    { path: "/new_tehsil", component: New_Tehsil},
+
 ];
 
 export { publicRoutes, privateRoutes };
