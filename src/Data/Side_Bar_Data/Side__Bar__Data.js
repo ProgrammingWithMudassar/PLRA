@@ -33,9 +33,9 @@ export const TabBarData = [
       { key: 8, route: "employee/education", text: "Education" },
       { key: 9, route: "employee/address", text: "Address" },
       { key: 10, route: "employee/training", text: "Training" },
-      { key: 11, route: "employee/skills", text: "Skills" },
-    ],
-  },
+      { key: 11, route: "employee/skills", text: "Skills" },
+    ],
+  },
   {
     key: 3,
     text: 'Leaves',
@@ -107,7 +107,7 @@ export const TabBarData = [
   },
 ];
 
-export const Employee_DropDown= [
+export const Employee_DropDown = [
   { key: 1, route: "employee/basic_information", text: "Basic Information " },
   { key: 2, route: "employee/personal_information", text: "Personal Information" },
   { key: 3, route: "employee/employment_history", text: "Employment History" },
@@ -183,6 +183,7 @@ export const SlideBarData = [
     route: '',
     text: 'Setting',
     icon: faCog,
+    route: "employee/skills",
   },
 ];
 

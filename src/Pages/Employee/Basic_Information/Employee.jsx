@@ -19,6 +19,8 @@ import {
   Basic_Info, Personal_Info
 } from './Employee_Tabs/index.js';
 import New_Emp_Basic_Emp from './Add_New/New_Emp_Basic_info.jsx'
+import { TabBar } from '../../../Components/index'
+
 
 
 const renderNullInRed = (params) => {
@@ -84,6 +86,7 @@ const Employee = () => {
 
   return (
     <>
+    <TabBar />
       <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <Breadcrumb title="Employee" breadcrumbItem="Employee / Basic Information" />
         <Tooltip title="New">

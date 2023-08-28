@@ -15,3 +15,7 @@ export { default as References } from "./Employee/References/References.jsx";
 export { default as Education } from "./Employee/Education/Education.jsx";
 export { default as Training } from "./Employee/Training/Training.jsx"; 
 export { default as Skills } from "./Employee/Skills/Skills.jsx";
+
+
+// New Records 
+export { default as New_Center } from './New_Records/New_Center.jsx'

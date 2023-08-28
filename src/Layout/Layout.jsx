@@ -217,7 +217,7 @@ const Sidebar = () => {
         sx={{ minHeight: "100vh", flexGrow: 1, py: 3, px: 2, maxWidth: "100%", overflowX: 'hidden' }}
         onClick={() => { setOpen(false); setActiveDropdown(false) }}>
         <DrawerHeader />
-        <TabBar />
+        {/* <TabBar /> */}
         <Handling__Route />
       </Box>
     </Box>

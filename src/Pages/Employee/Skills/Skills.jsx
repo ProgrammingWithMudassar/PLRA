@@ -1,8 +1,12 @@
 import React from 'react'
+import { TabBar } from '../../../Components/index'
 
 const Skills = () => {
   return (
-    <div>Skills</div>
+    <div>
+      <TabBar />
+      Skills
+    </div>
   )
 }
 

@@ -36,6 +36,11 @@ const New_Emp_Basic_info = (props) => {
     // Add more center objects...
   ];
 
+  const columns = [
+    { id: 'center_name', label: 'Center Name' },
+    { id: 'region', label: 'Region' },
+  ];
+
   const openDialog = () => {
     setIsDialogOpen(true);
   };
@@ -112,8 +117,15 @@ const New_Emp_Basic_info = (props) => {
         <Grid item xs={12} md={4}>
           <Box className="dataView">
             <label name="name">Center Name:</label>
-            <TextField id="name" label="" value={selectedCenterName  || ''} readOnly onClick={openDialog}/>
-            <Multi_Dropdown open={isDialogOpen} onClose={closeDialog} centers={centers} onSelect={handleSelect}  />
+            <TextField id="name" label="" value={selectedCenterName || ''} readOnly onClick={openDialog} />
+            <Multi_Dropdown
+              open={isDialogOpen}
+              onClose={closeDialog}
+              onSelect={handleSelect}
+              centers={centers}
+              columns={columns}
+              newLink="/new_center"
+            />
           </Box>
           <Box className="dataView">
             <label name="name">District:</label>

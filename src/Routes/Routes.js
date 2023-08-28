@@ -3,7 +3,7 @@ import {
     Login, Register, 
     Dashboard, Employee,  Personal__Information,
     Address, Contact__Information, Family__Information, Employment__History,
-    Personal__Document, References, Education, Training, Skills,
+    Personal__Document, References, Education, Training, Skills, New_Center,
 } from "../Pages/index.js";
 
 // Public Routes
@@ -29,6 +29,7 @@ const privateRoutes = [
     { path: "/employee/education", component: Education },
     { path: "/employee/training", component: Training },
     { path: "/employee/skills", component: Skills },
+    { path: "/new_center", component: New_Center}
 ];
 
 export { publicRoutes, privateRoutes };

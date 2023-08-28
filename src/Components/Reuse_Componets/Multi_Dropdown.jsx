@@ -1,68 +1,44 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
-  Dialog, DialogContent, Paper, Table,
-  TableContainer, TableHead, TableRow, TableCell, TableBody,
-  TextField, Box, Button // Import Button component
+  Dialog, DialogContent, Paper, Table, Button,
+  TableContainer, TableHead, TableRow, TableCell, TableBody, Tooltip,
 } from '@mui/material';
+import { Link } from 'react-router-dom'
 import { useTheme } from '@mui/material/styles';
 
-const Multi_Dropdown = ({ open, onClose, centers, onSelect }) => {
+
+const Multi_Dropdown = ({ open, onClose, centers, onSelect, columns, newLink }) => {
   const theme = useTheme();
-  const [addCenterDialogOpen, setAddCenterDialogOpen] = useState(false); // State for the add center dialog
-
-  const handleAddCenterClick = () => {
-    setAddCenterDialogOpen(true);
-  };
-
-  const handleAddCenterClose = () => {
-    setAddCenterDialogOpen(false);
-  };
 
   return (
     <Dialog open={open} onClose={onClose} sx={{ width: "50%", m: 'auto' }}>
       <DialogContent>
+        <Tooltip title="New">
+          <Link to={newLink}><Button>New</Button></Link>
+        </Tooltip>
         <TableContainer component={Paper}>
           <Table>
             <TableHead sx={{ bgcolor: theme.palette.primary.main }}>
-              <TableRow >
-                <TableCell sx={{ color: theme.palette.common.white }}>Center Name</TableCell>
-                <TableCell sx={{ color: theme.palette.common.white }}>Region</TableCell>
-                <TableCell sx={{ color: theme.palette.common.white }}>District</TableCell>
+              <TableRow>
+                {columns.map((column) => (
+                  <TableCell key={column.id} sx={{ color: theme.palette.common.white }}>
+                    {column.label}
+                  </TableCell>
+                ))}
               </TableRow>
             </TableHead>
             <TableBody>
               {centers.map((center) => (
-                <TableRow
-                  key={center.c_rec_id}
-                  onClick={() => onSelect(center.center_name)}
-                >
-                  <TableCell>{center.center_name}</TableCell>
-                  <TableCell>{center.region}</TableCell>
-                  <TableCell>{center.district}</TableCell>
+                <TableRow key={center.c_rec_id} onClick={() => onSelect(center.center_name)}>
+                  {columns.map((column) => (
+                    <TableCell key={column.id}>{center[column.id]}</TableCell>
+                  ))}
                 </TableRow>
               ))}
             </TableBody>
           </Table>
         </TableContainer>
       </DialogContent>
-
-      {/* Button to open the add center dialog */}
-      <Button onClick={handleAddCenterClick}>Add Center</Button>
-
-      {/* Dialog for adding a new center */}
-      <Dialog open={addCenterDialogOpen} onClose={handleAddCenterClose}>
-        <DialogContent>
-          <label htmlFor="tehsil">Tehsil:</label>
-          <TextField id="tehsil" />
-          <label htmlFor="centerName">Center Name:</label>
-          <TextField id="centerName" />
-          <label htmlFor="region">Region:</label>
-          <TextField id="region" />
-          <label htmlFor="district">District:</label>
-          <TextField id="district" />
-        </DialogContent>
-      </Dialog>
-
     </Dialog>
   );
 };

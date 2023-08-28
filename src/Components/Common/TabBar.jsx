@@ -9,7 +9,6 @@ import { selectButton } from '../../Features/Counter/CounterSlice.js'
 
 
 export default function TabBar() {
-  const dispatch = useDispatch(); 
   const [value, setValue] = React.useState(0);
   const selectedButtonId = useSelector((state) => state.counter.selectedButtonId);
 
