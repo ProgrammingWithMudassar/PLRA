@@ -1,45 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
-  Dialog, DialogContent, Paper, Table, Tooltip,
-  TableContainer, TableHead, TableRow, TableCell, TableBody, Button, 
+  Dialog, DialogContent, Paper, Table,
+  TableContainer, TableHead, TableRow, TableCell, TableBody,
+  TextField, Box, Button,
+  IconButton
 } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
-import { Link } from 'react-router-dom'
+import { DataGrid } from '@mui/x-data-grid';
+import { Close as CloseIcon } from '@mui/icons-material';
 
+const Multi_Dropdown = ({ open, onClose, centers, columns, onSelect }) => {
+  const handleRowClick = (params) => {
+    if (onSelect) {
+      onSelect(params.row);
+    }
+    onClose();
+  };
 
-
-
-const Multi_Dropdown = ({ open, onClose, centers, onSelect, columns, newLink }) => {
-  const theme = useTheme();
-
+  const rowHeight = 25;
   return (
-    <Dialog open={open} onClose={onClose} sx={{ width: "50%", m: 'auto' }}>
-      <DialogContent>
-        <Tooltip title="New">
-          <Link to={newLink}><Button>add new</Button></Link>
-        </Tooltip>
-        <TableContainer component={Paper}>
-          <Table>
-            <TableHead sx={{ bgcolor: theme.palette.primary.main }}>
-              <TableRow>
-                {columns.map((column) => (
-                  <TableCell key={column.id} sx={{ color: theme.palette.common.white }}>
-                    {column.label}
-                  </TableCell>
-                ))}
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {centers.map((center) => (
-                <TableRow key={center.c_rec_id} onClick={() => onSelect(center.center_name)}>
-                  {columns.map((column) => (
-                    <TableCell key={column.id}>{center[column.id]}</TableCell>
-                  ))}
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
+    <Dialog open={open} onClose={onClose} sx={{ width: 'fit-content', m: 'auto' }}>
+
+      <DialogContent  >
+        <DataGrid sx={{ '&.MuiDataGrid-root .MuiDataGrid-cell:focus-within': { outline: 'none' }, fontSize: '14px' }}
+          rows={centers}
+          columns={columns}
+          getRowHeight={() => rowHeight}
+          disableRowSelectionOnClick={true}
+          columnHeaderHeight={30}
+          pageSizeOptions={[10, 20, 30]}
+          onRowClick={handleRowClick}
+        />
       </DialogContent>
     </Dialog>
   );

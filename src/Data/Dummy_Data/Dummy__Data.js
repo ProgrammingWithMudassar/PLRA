@@ -1871,7 +1871,6 @@ export const rows = [
     active:'Active'
   },
 ];
-
 export const PersonalInformation = [
   {
     id:'1',
@@ -1978,7 +1977,6 @@ export const PersonalInformation = [
     disablity_note: " ",
   },
 ];
-
 export const Countries = [
   {
     country_rec_id: 1,
@@ -1997,7 +1995,6 @@ export const Countries = [
     country_name: "Afghanistan",
   },
 ];
-
 export const education = [
   {
 
@@ -2057,7 +2054,6 @@ export const education = [
     institution_country: 1,
   },
 ];
-
 export const training = [
   {
     id:'1',
@@ -2114,7 +2110,6 @@ export const training = [
     employee:4
   },
 ];
-
 export const skill = [
   {
 
@@ -2270,7 +2265,6 @@ export const address = [
     employee:4
   },
 ];
-
 export const familyInformation = [
   {
     id:'1',
@@ -2309,7 +2303,6 @@ export const familyInformation = [
     employee: "Zarqa Shehwar",
   },
 ];
-
 export const employeeReference =
 [
   {
@@ -2361,7 +2354,116 @@ export const employeeReference =
     employee: "Ahmed Ali",
   }
 ];
-
+export const Center = [
+  {
+    id:'1',
+    c_rec_id: 1,
+    center_id: "center_1",
+    center_name: "RWP CENTER",
+    la_mapping: "",
+    rr_mapping: "",
+    region: "North",
+    division: "Punjab",
+    district: "Rawalpindi",
+    tehsil: "Rawalpindi",
+  },
+  {
+    id:'2',
+    c_rec_id: 2,
+    center_id: "center_2",
+    center_name: "LHR CENTER",
+    la_mapping: "",
+    rr_mapping: "",
+    region: "North",
+    division: "Punjab",
+    district: "Lahore",
+    tehsil: "Lahore",
+  },
+  {
+    id:'3',
+    c_rec_id: 3,
+    center_id: "center_3",
+    center_name: "GJW CENTER",
+    la_mapping: "",
+    rr_mapping: "",
+    region: "North",
+    division: "Punjab",
+    district: "Gujranwala",
+    tehsil: "Gujranwala",
+  },
+  {
+    id:'4',
+    c_rec_id: 4,
+    center_id: "center_4",
+    center_name: "SLK CENTER",
+    la_mapping: "",
+    rr_mapping: "",
+    region: "North",
+    division: "Punjab",
+    district: "Sialkot",
+    tehsil: "Sialkot",
+  },
+  {
+    id:'5',
+    c_rec_id: 5,
+    center_id: "center_5",
+    center_name: "FSL CENTER",
+    la_mapping: "",
+    rr_mapping: "",
+    region: "West",
+    division: "Punjab",
+    district: "Faisalabad",
+    tehsil: "Faisalabad",
+  },
+  {
+    id:'6',
+    c_rec_id: 6,
+    center_id: "center_6",
+    center_name: "BWP CENTER",
+    la_mapping: "",
+    rr_mapping: "",
+    region: "West",
+    division: "Punjab",
+    district: "Bahawalpur",
+    tehsil: "Bahawalpur",
+  },
+  {
+    id:'7',
+    c_rec_id: 7,
+    center_id: "center_7",
+    center_name: "SHW CENTER",
+    la_mapping: "",
+    rr_mapping: "",
+    region: "West",
+    division: "Punjab",
+    district: "Sahiwal",
+    tehsil: "Sahiwal",
+  },
+  {
+    id:'8',
+    c_rec_id: 8,
+    center_id: "center_8",
+    center_name: "SRG CENTER",
+    la_mapping: "",
+    rr_mapping: "",
+    region: "South",
+    division: "Punjab",
+    district: "Sargodha",
+    tehsil: "Sargodha",
+  },
+  {
+    id:'9',
+    c_rec_id: 9,
+    center_id: "center_9",
+    center_name: "MLT CENTER",
+    la_mapping: "",
+    rr_mapping: "",
+    region: "South",
+    division: "Punjab",
+    district: "Multan",
+    tehsil: "Multan",
+  },
+];
 export const employeeHistory = [
     
     {
@@ -2505,107 +2607,7 @@ export const employeeDepndentHistory = [
   }
 ];
 
-export const center = [
-  {
-    c_rec_id: 1,
-    center_id: "center_1",
-    center_name: "RWP CENTER",
-    la_mapping: "",
-    rr_mapping: "",
-    region: "North",
-    division: "Punjab",
-    district: "Rawalpindi",
-    tehsil: "Rawalpindi",
-  },
-  {
-    c_rec_id: 2,
-    center_id: "center_2",
-    center_name: "LHR CENTER",
-    la_mapping: "",
-    rr_mapping: "",
-    region: "North",
-    division: "Punjab",
-    district: "Lahore",
-    tehsil: "Lahore",
-  },
-  {
-    c_rec_id: 3,
-    center_id: "center_3",
-    center_name: "GJW CENTER",
-    la_mapping: "",
-    rr_mapping: "",
-    region: "North",
-    division: "Punjab",
-    district: "Gujranwala",
-    tehsil: "Gujranwala",
-  },
-  {
-    c_rec_id: 4,
-    center_id: "center_4",
-    center_name: "SLK CENTER",
-    la_mapping: "",
-    rr_mapping: "",
-    region: "North",
-    division: "Punjab",
-    district: "Sialkot",
-    tehsil: "Sialkot",
-  },
-  {
-    c_rec_id: 5,
-    center_id: "center_5",
-    center_name: "FSL CENTER",
-    la_mapping: "",
-    rr_mapping: "",
-    region: "West",
-    division: "Punjab",
-    district: "Faisalabad",
-    tehsil: "Faisalabad",
-  },
-  {
-    c_rec_id: 6,
-    center_id: "center_6",
-    center_name: "BWP CENTER",
-    la_mapping: "",
-    rr_mapping: "",
-    region: "West",
-    division: "Punjab",
-    district: "Bahawalpur",
-    tehsil: "Bahawalpur",
-  },
-  {
-    c_rec_id: 7,
-    center_id: "center_7",
-    center_name: "SHW CENTER",
-    la_mapping: "",
-    rr_mapping: "",
-    region: "West",
-    division: "Punjab",
-    district: "Sahiwal",
-    tehsil: "Sahiwal",
-  },
-  {
-    c_rec_id: 8,
-    center_id: "center_8",
-    center_name: "SRG CENTER",
-    la_mapping: "",
-    rr_mapping: "",
-    region: "South",
-    division: "Punjab",
-    district: "Sargodha",
-    tehsil: "Sargodha",
-  },
-  {
-    c_rec_id: 8,
-    center_id: "center_8",
-    center_name: "MLT CENTER",
-    la_mapping: "",
-    rr_mapping: "",
-    region: "South",
-    division: "Punjab",
-    district: "Multan",
-    tehsil: "Multan",
-  },
-];
+
 export const contactNumber = [
   {
     id:'1',
@@ -2663,5 +2665,93 @@ export const contactNumber = [
     employee:6
   },
 ];
+export const District= [
+  {
+    id: "1",
+    r_rec_id: 1,
+    region_id: "1",
+    region_name: "North",
+  },
+  {
+    id: "2",
+    r_rec_id: 2,
+    region_id: "2",
+    region_name: "South",
+  },
+  {
+    id: "3",
+    r_rec_id: 3,
+    region_id: "3",
+    region_name: "West",
+  },
+  {
+    id: "4",
+    r_rec_id: 4,
+    region_id: "4",
+    region_name: "South",
+  },
+];
 
-
+export const Wing = [
+  {
+    id: "1",
+    w_rec_id: 1,
+    wing_id: "wing_1",
+    wing_name: "Marketing",
+    search_name: "Advertisement",
+    operating_unit_type: "Department",
+  },
+  {
+    id: "2",
+    w_rec_id: 2,
+    wing_id: "wing_2",
+    wing_name: "Finance",
+    search_name: "Finance Department",
+    operating_unit_type: "Department",
+  },
+  {
+    id: "3",
+    w_rec_id: 3,
+    wing_id: "wing_3",
+    wing_name: "IT",
+    search_name: "IT Department",
+    operating_unit_type: "Department",
+  },
+]; 
+export const SubWing = [
+  {
+    id: "1",
+    sw_rec_id: 1,
+    sub_wing_id: "sub_wing_1",
+    sub_wing_name: "Social Media Marketing",
+    wing_id: "wing_1", // This refers to the wing_id of the parent wing
+  },
+  {
+    id: "2",
+    sw_rec_id: 2,
+    sub_wing_id: "sub_wing_2",
+    sub_wing_name: "Financial Accounting",
+    wing_id: "wing_2", 
+  },
+  {
+    id: "3",
+    sw_rec_id: 3,
+    sub_wing_id: "sub_wing_3",
+    sub_wing_name: "Software Engineer",
+    wing_id: "wing_3", 
+  },
+  {
+    id: "4",
+    sw_rec_id: 4,
+    sub_wing_id: "sub_wing_4",
+    sub_wing_name: "Network Administrator",
+    wing_id: "wing_3", 
+  },
+  {
+    id: "5",
+    sw_rec_id: 5,
+    sub_wing_id: "sub_wing_5",
+    sub_wing_name: "Data Base Administrator",
+    wing_id: "wing_3", 
+  },
+]
